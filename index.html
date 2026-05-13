@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="ro" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    /* Apply saved theme before render to avoid flash */
+    (function() {
+      var t = localStorage.getItem('ts-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
 
@@ -18,8 +25,17 @@
       <a href="#" class="logo">Tekaro<span>Studio</span></a>
       <nav class="nav__links">
         <a href="#servicii">Servicii</a>
-        <a href="#tarife">Tarife</a>
+        <a href="#locatii">Locații</a>
         <a href="#despre">Despre</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Schimbă tema">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.22 3.22l1.41 1.41M13.36 13.36l1.41 1.41M3.22 14.78l1.41-1.41M13.36 4.64l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M15.5 10.5A6.5 6.5 0 017.5 2.5a6.5 6.5 0 000 13 6.5 6.5 0 008-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
         <a href="#contact" class="btn btn--nav">Programează acum</a>
       </nav>
       <button class="nav__burger" aria-label="Meniu" onclick="toggleMenu()">
@@ -28,9 +44,15 @@
     </div>
     <div class="nav__mobile" id="mobileMenu">
       <a href="#servicii" onclick="toggleMenu()">Servicii</a>
-      <a href="#tarife" onclick="toggleMenu()">Tarife</a>
+      <a href="#locatii" onclick="toggleMenu()">Locații</a>
       <a href="#despre" onclick="toggleMenu()">Despre</a>
       <a href="#contact" onclick="toggleMenu()">Programează</a>
+      <button class="theme-toggle theme-toggle--mobile" onclick="toggleTheme()">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.22 3.22l1.41 1.41M13.36 13.36l1.41 1.41M3.22 14.78l1.41-1.41M13.36 4.64l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M15.5 10.5A6.5 6.5 0 017.5 2.5a6.5 6.5 0 000 13 6.5 6.5 0 008-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="icon-sun">Mod luminos</span>
+        <span class="icon-moon">Mod întunecat</span>
+      </button>
     </div>
   </header>
 
@@ -42,8 +64,8 @@
       <div class="hero__content">
         <div class="hero__pill">Cabinet recuperare medicală & sportivă</div>
         <h1>
-          Redobândește-ți<br />
-          <span class="hero__accent">mobilitatea.</span>
+          Mișcă-te liber.<br />
+          <span class="hero__accent">Fără durere.</span>
         </h1>
         <p class="hero__sub">
           Terapie avansată prin <strong>masaj manual</strong> și <strong>tehnologie TECAR</strong>.
@@ -91,7 +113,7 @@
             <span class="hcard__val">Tekaro Studio</span>
           </div>
           <div class="hcard__badge">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#00c9a7" stroke-width="1.5"/><path d="M4.5 7l2 2 3-3" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 7l2 2 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Verificat
           </div>
         </div>
@@ -187,67 +209,67 @@
         <div class="scard scard--featured">
           <div class="scard__label">Cel mai solicitat</div>
           <div class="scard__icon-wrap">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4z" stroke="#00c9a7" stroke-width="1.5"/><path d="M10 16c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="16" r="2" fill="#00c9a7"/></svg>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4z" stroke="currentColor" stroke-width="1.5"/><path d="M10 16c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="16" r="2" fill="currentColor"/></svg>
           </div>
           <h3>Terapie TECAR</h3>
           <p>Tehnologie de ultimă generație care generează energie endogenă în țesuturi, accelerând vindecarea naturală a corpului. Rezultate vizibile de la prima ședință.</p>
           <ul class="scard__features">
             <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               TECAR activ — 20 min + 15 min masaj
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               TECAR simplă — diatermie focalizată
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Pachete 5 și 10 ședințe disponibile
             </li>
           </ul>
-          <a href="#tarife" class="btn btn--primary">Vezi tarifele</a>
+          <a href="#contact" class="btn btn--primary">Programează ședința</a>
         </div>
 
         <div class="scard">
           <div class="scard__icon-wrap">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 16c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round"/><path d="M16 12v4l3 3" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 16c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16 12v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <h3>Masaj Manual</h3>
           <p>Tehnici manuale profesionale aplicate precis pentru a elimina tensiunile musculare, a îmbunătăți circulația și a accelera recuperarea.</p>
           <ul class="scard__features">
             <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Decontracturant pe zonă sau complet
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Terapeutic regional focalizat
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Deep tissue — țesut profund
             </li>
           </ul>
-          <a href="#tarife" class="btn btn--outline">Vezi tarifele</a>
+          <a href="#contact" class="btn btn--outline">Programează ședința</a>
         </div>
 
         <div class="scard">
           <div class="scard__icon-wrap">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 6l2.5 5 5.5.8-4 3.9.9 5.5L16 18.5l-4.9 2.7.9-5.5-4-3.9 5.5-.8L16 6z" stroke="#00c9a7" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 6l2.5 5 5.5.8-4 3.9.9 5.5L16 18.5l-4.9 2.7.9-5.5-4-3.9 5.5-.8L16 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           </div>
           <h3>Programe Speciale</h3>
           <p>Protocoale personalizate pentru obiective specifice — de la performanță sportivă la relaxare profundă și recuperare pediatrică.</p>
           <ul class="scard__features">
             <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Pregătire pre-efort sportivi
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Masaj pentru copii — postură & dezvoltare
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Elasticitate fascie & ligamente
             </li>
           </ul>
@@ -257,111 +279,96 @@
     </div>
   </section>
 
-  <!-- SERVICII DETALIATE (fara preturi) -->
-  <section class="tarife" id="tarife">
+  <!-- LOCATII -->
+  <section class="locatii" id="locatii">
     <div class="container">
       <div class="section-head">
-        <p class="kicker">Serviciile noastre</p>
-        <h2>Ce <em>includem</em></h2>
-        <p class="section-sub">Fiecare ședință este personalizată. Contactează-ne pentru un tarif adaptat nevoilor tale.</p>
+        <p class="kicker">Unde lucrăm</p>
+        <h2>Locații <em>active</em></h2>
+        <p class="section-sub">Activăm în două locații din București — dimineața la PT Center, după-amiaza la Crowne Plaza Hotel.</p>
       </div>
 
-      <div class="tarife__layout">
-        <div class="tarife__col">
-          <div class="tarife__group-head">
-            <div class="tarife__group-dot"></div>
-            <h3>Masaj Manual</h3>
-          </div>
-          <div class="trow">
-            <div class="trow__info">
-              <p class="trow__name">Decontracturant pe zonă</p>
-              <p class="trow__desc">Spate · cervicală · brațe · picior</p>
-            </div>
-            <div class="trow__right">
-              <span class="trow__time">25 min</span>
-            </div>
-          </div>
-          <div class="trow">
-            <div class="trow__info">
-              <p class="trow__name">Decontracturant complet</p>
-              <p class="trow__desc">Corp întreg</p>
-            </div>
-            <div class="trow__right">
-              <span class="trow__time">50 min</span>
-            </div>
-          </div>
-          <div class="trow">
-            <div class="trow__info">
-              <p class="trow__name">Terapeutic regional</p>
-              <p class="trow__desc">O zonă, focalizat</p>
-            </div>
-            <div class="trow__right">
-              <span class="trow__time">25 min</span>
-            </div>
-          </div>
-          <div class="trow">
-            <div class="trow__info">
-              <p class="trow__name">Deep tissue</p>
-              <p class="trow__desc">Țesut profund</p>
-            </div>
-            <div class="trow__right">
-              <span class="trow__time">50 min</span>
-            </div>
-          </div>
+      <div class="locatii__grid">
 
-          <div class="tarife__group-head" style="margin-top:40px">
-            <div class="tarife__group-dot"></div>
-            <h3>Terapie TECAR</h3>
+        <!-- PT Center -->
+        <div class="loc-card">
+          <div class="loc-card__tag">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 3.5V6.5l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Dimineață · 07:00 – 12:00
           </div>
-          <div class="trow">
-            <div class="trow__info">
-              <p class="trow__name">TECAR activ</p>
-              <p class="trow__desc">20 min TECAR + 15 min masaj</p>
-            </div>
-            <div class="trow__right">
-              <span class="trow__time">35 min</span>
-            </div>
+          <div class="loc-card__icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <path d="M3 28V12L15 4l12 8v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11 28v-9h8v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="12" y="13" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
           </div>
-          <div class="trow">
-            <div class="trow__info">
-              <p class="trow__name">TECAR simplă</p>
-              <p class="trow__desc">Diatermie focalizată</p>
-            </div>
-            <div class="trow__right">
-              <span class="trow__time">20 min</span>
-            </div>
+          <h3>PT Center</h3>
+          <p class="loc-card__type">Sală fitness & recuperare</p>
+          <div class="loc-card__addr">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.791 1 3 2.791 3 5c0 3.25 4 8 4 8s4-4.75 4-8c0-2.209-1.791-4-4-4z" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            Cheiul Dâmboviței nr. 26, București
           </div>
+          <div class="loc-card__schedule">
+            <span>Program</span>
+            <strong>Luni – Sâmbătă · 07:00 – 12:00</strong>
+          </div>
+          <a
+            href="https://www.google.com/maps/search/Cheiul+Dambovitei+26+Bucuresti"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--outline btn--full"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.791 1 3 2.791 3 5c0 3.25 4 8 4 8s4-4.75 4-8c0-2.209-1.791-4-4-4z" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            Deschide harta
+          </a>
         </div>
 
-        <div class="tarife__pachete">
-          <h3 class="pachete__heading">Pachete disponibile</h3>
-          <p class="pachete__sub">Pachete de ședințe cu discount pentru rezultate optime.</p>
-
-          <div class="pachet">
-            <div class="pachet__top">
-              <p class="pachet__name">Pachet 5 ședințe TECAR</p>
-            </div>
-            <p class="pachet__save">Ideal pentru recuperare fază acută</p>
-            <a href="#contact" class="btn btn--outline btn--full">Solicită tariful</a>
+        <!-- Crowne Plaza -->
+        <div class="loc-card loc-card--featured">
+          <div class="loc-card__tag">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 3.5V6.5l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            După-amiază · 13:00 – 19:00
           </div>
-
-          <div class="pachet pachet--featured">
-            <div class="pachet__badge">Recomandat</div>
-            <div class="pachet__top">
-              <p class="pachet__name">Pachet 10 ședințe TECAR</p>
-            </div>
-            <p class="pachet__save">Cel mai bun raport calitate-preț</p>
-            <a href="#contact" class="btn btn--primary btn--full">Solicită tariful</a>
+          <div class="loc-card__icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <rect x="2" y="8" width="26" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M2 13h26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 28v-9h5v9M17 28v-9h5v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 17h1M12 17h1M16 17h1M20 17h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M15 4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M10 8V5l5-3 5 3v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
-
-          <div class="pachet">
-            <div class="pachet__top">
-              <p class="pachet__name">TECAR + Masaj combinat</p>
-            </div>
-            <p class="pachet__save">Protocol personalizat după diagnostic și obiective</p>
-            <a href="#contact" class="btn btn--ghost btn--full">Întreabă la programare</a>
+          <h3>Crowne Plaza Hotel</h3>
+          <p class="loc-card__type">Hotel 5 stele · Wellness & SPA</p>
+          <div class="loc-card__addr">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.791 1 3 2.791 3 5c0 3.25 4 8 4 8s4-4.75 4-8c0-2.209-1.791-4-4-4z" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            Poligrafiei nr. 1, București
           </div>
+          <div class="loc-card__schedule">
+            <span>Program</span>
+            <strong>Luni – Sâmbătă · 13:00 – 19:00</strong>
+          </div>
+          <a
+            href="https://www.google.com/maps/search/Crowne+Plaza+Bucharest+Poligrafiei+1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--primary btn--full"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.791 1 3 2.791 3 5c0 3.25 4 8 4 8s4-4.75 4-8c0-2.209-1.791-4-4-4z" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            Deschide harta
+          </a>
         </div>
+
+      </div>
+
+      <div class="locatii__summary">
+        <div class="locatii__summary-info">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.25"/><path d="M8 4.5V8l2.5 2.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg>
+          Program total: <strong>Luni – Sâmbătă · 07:00 – 19:00</strong>
+        </div>
+        <a href="#contact" class="btn btn--primary">Programează acum</a>
       </div>
     </div>
   </section>
@@ -382,7 +389,7 @@
           </div>
         </div>
         <div class="despre__card-float">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.5 5 5.5.8-4 3.9.9 5.5L10 14.5l-4.9 2.7.9-5.5-4-3.9 5.5-.8L10 2z" stroke="#00c9a7" stroke-width="1.5" stroke-linejoin="round" fill="#00c9a7" fill-opacity="0.2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.5 5 5.5.8-4 3.9.9 5.5L10 14.5l-4.9 2.7.9-5.5-4-3.9 5.5-.8L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="currentColor" fill-opacity="0.2"/></svg>
           <p>Tekaro Studio</p>
         </div>
       </div>
@@ -404,7 +411,7 @@
     <div class="container cta-band__inner">
       <div>
         <h2>Gata să începi recuperarea?</h2>
-        <p>Programează acum și face primul pas către mobilitate totală.</p>
+        <p>Programează acum și fă primul pas către mobilitate totală.</p>
       </div>
       <a href="tel:0736844319" class="btn btn--primary btn--lg">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 2h3l1.5 4-2 1.5a11 11 0 005.5 5.5L13 11l4 1.5v3A1.5 1.5 0 0115.5 17C7.5 17 1 10.5 1 2.5A1.5 1.5 0 013.5 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
@@ -432,11 +439,20 @@
           </div>
           <div class="contact__info-row">
             <div class="contact__info-icon">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="4" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M1 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 5.5V9l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
             <div>
-              <p class="contact__info-label">Program</p>
-              <p class="contact__info-val">Luni – Sâmbătă · 09:00 – 20:00</p>
+              <p class="contact__info-label">Program PT Center</p>
+              <p class="contact__info-val">Luni – Sâmbătă · 07:00 – 12:00</p>
+            </div>
+          </div>
+          <div class="contact__info-row">
+            <div class="contact__info-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 5.5V9l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <p class="contact__info-label">Program Crowne Plaza</p>
+              <p class="contact__info-val">Luni – Sâmbătă · 13:00 – 19:00</p>
             </div>
           </div>
         </div>
@@ -453,8 +469,17 @@
             <input type="tel" placeholder="07XX XXX XXX" required />
           </div>
           <div class="form__group">
+            <label>Locație preferată</label>
+            <select required>
+              <option value="" disabled selected>Alege locația...</option>
+              <option>PT Center — Cheiul Dâmboviței nr. 26</option>
+              <option>Crowne Plaza Hotel — Poligrafiei nr. 1</option>
+              <option>Oricare, în funcție de disponibilitate</option>
+            </select>
+          </div>
+          <div class="form__group">
             <label>Problemă / Mesaj</label>
-            <textarea placeholder="Descrie pe scurt ce afecțiune ai sau ce tip de ședință dorești..." rows="4" required></textarea>
+            <textarea placeholder="Descrie pe scurt ce afecțiune ai sau ce tip de ședință dorești..." rows="3" required></textarea>
           </div>
           <button type="submit" class="btn btn--primary btn--full">Trimite cererea</button>
           <p class="form__note">Te contactăm în maxim 24 de ore.</p>
@@ -473,15 +498,15 @@
       <div class="footer__links">
         <p class="footer__links-title">Navigare</p>
         <a href="#servicii">Servicii</a>
-        <a href="#tarife">Tarife</a>
+        <a href="#locatii">Locații</a>
         <a href="#despre">Despre</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="footer__contact">
         <p class="footer__links-title">Contact</p>
         <a href="tel:0736844319">0736 844 319</a>
-        <p>Luni – Sâmbătă</p>
-        <p>09:00 – 20:00</p>
+        <p>PT Center · 07:00 – 12:00</p>
+        <p>Crowne Plaza · 13:00 – 19:00</p>
       </div>
     </div>
     <div class="footer__bottom">
@@ -492,7 +517,7 @@
   </footer>
 
   <script>
-    // Nav scroll effect
+    // Nav scroll
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('nav--scrolled', window.scrollY > 40);
     });
@@ -502,10 +527,18 @@
       document.getElementById('mobileMenu').classList.toggle('open');
     }
 
+    // Theme toggle
+    function toggleTheme() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('ts-theme', next);
+    }
+
     // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var target = document.querySelector(a.getAttribute('href'));
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth' });
@@ -517,19 +550,18 @@
     // Form
     function handleForm(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
+      var btn = e.target.querySelector('button[type="submit"]');
       btn.textContent = 'Cerere trimisă! Te contactăm în curând.';
       btn.disabled = true;
-      btn.style.background = '#00a88b';
     }
 
     // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(el => {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(el) {
         if (el.isIntersecting) el.target.classList.add('visible');
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.ind-card, .scard, .trow, .pachet').forEach(el => {
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.ind-card, .scard, .loc-card').forEach(function(el) {
       el.classList.add('reveal');
       observer.observe(el);
     });
