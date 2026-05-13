@@ -4,103 +4,171 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tekaro Studio — Recuperare medicală & sportivă</title>
-  <meta name="description" content="Tekaro Studio — Cabinet de recuperare medicală și sportivă. Masaj manual, terapie TECAR, kinetoterapie. Programează-te acum." />
+  <meta name="description" content="Cabinet de recuperare medicală și sportivă. Masaj manual profesional, terapie TECAR de ultimă generație. Kinetoterapeut Cristian Dan." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- NAV -->
-  <header class="nav">
+  <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="#" class="logo">Tekaro<span>Studio</span></a>
       <nav class="nav__links">
         <a href="#servicii">Servicii</a>
         <a href="#tarife">Tarife</a>
-        <a href="#contact" class="btn btn--outline">Programează</a>
+        <a href="#despre">Despre</a>
+        <a href="#contact" class="btn btn--nav">Programează acum</a>
       </nav>
-      <button class="nav__burger" aria-label="Meniu" onclick="toggleMenu()">&#9776;</button>
+      <button class="nav__burger" aria-label="Meniu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <div class="nav__mobile" id="mobileMenu">
       <a href="#servicii" onclick="toggleMenu()">Servicii</a>
       <a href="#tarife" onclick="toggleMenu()">Tarife</a>
+      <a href="#despre" onclick="toggleMenu()">Despre</a>
       <a href="#contact" onclick="toggleMenu()">Programează</a>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__glow"></div>
     <div class="container hero__inner">
-      <div class="hero__text">
-        <p class="hero__kicker">Cabinet recuperare medicală & sportivă</p>
-        <h1>Redobândește-ți<br /><span>mobilitatea.</span></h1>
+      <div class="hero__content">
+        <div class="hero__pill">Cabinet recuperare medicală & sportivă</div>
+        <h1>
+          Redobândește-ți<br />
+          <span class="hero__accent">mobilitatea.</span>
+        </h1>
         <p class="hero__sub">
-          Terapie avansată prin masaj manual și tehnologie TECAR.
-          Eliminăm tensiunea adâncă, accelerăm vindecarea musculară
-          și redăm mișcarea articulațiilor blocate.
+          Terapie avansată prin <strong>masaj manual</strong> și <strong>tehnologie TECAR</strong>.
+          Eliminăm tensiunea adâncă, accelerăm vindecarea și redăm mișcarea articulațiilor blocate.
         </p>
-        <div class="hero__cta">
-          <a href="#contact" class="btn btn--primary">Programează o ședință</a>
-          <a href="#servicii" class="btn btn--ghost">Vezi serviciile</a>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary btn--lg">
+            <span>Programează o ședință</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="tel:0736844319" class="btn btn--ghost btn--lg">0736 844 319</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <strong>TECAR</strong>
+            <span>Tehnologie avansată</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <strong>Masaj</strong>
+            <span>Manual profesional</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <strong>Kineto</strong>
+            <span>Recuperare completă</span>
+          </div>
         </div>
       </div>
-      <div class="hero__badge">
-        <div class="badge__ring">
-          <p class="badge__line1">Kinetoterapeut</p>
-          <p class="badge__name">Cristian Dan</p>
-          <p class="badge__line2">Tekaro Studio</p>
+      <div class="hero__visual">
+        <div class="hero__card">
+          <div class="hcard__top">
+            <div class="hcard__dot"></div>
+            <span>Ședință activă</span>
+          </div>
+          <p class="hcard__name">Cristian Dan</p>
+          <p class="hcard__role">Kinetoterapeut</p>
+          <div class="hcard__divider"></div>
+          <div class="hcard__row">
+            <span>Specializare</span>
+            <span class="hcard__val">TECAR & Masaj</span>
+          </div>
+          <div class="hcard__row">
+            <span>Studio</span>
+            <span class="hcard__val">Tekaro Studio</span>
+          </div>
+          <div class="hcard__badge">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#00c9a7" stroke-width="1.5"/><path d="M4.5 7l2 2 3-3" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Verificat
+          </div>
         </div>
+        <div class="hero__float hero__float--1">Terapie TECAR</div>
+        <div class="hero__float hero__float--2">Recuperare rapidă</div>
       </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
     </div>
   </section>
 
   <!-- INDICATII -->
-  <section class="indicatii">
+  <section class="indicatii" id="indicatii">
     <div class="container">
-      <p class="section-kicker">Indicații clinice</p>
-      <h2>Tratăm <span>afecțiuni</span> complexe</h2>
+      <div class="section-head">
+        <p class="kicker">Indicații clinice</p>
+        <h2>Tratăm afecțiuni <em>complexe</em></h2>
+        <p class="section-sub">Protocoale personalizate pentru fiecare diagnostic, de la faza acută până la recuperarea completă.</p>
+      </div>
       <div class="indicatii__grid">
-        <div class="indicatii__card">
-          <div class="indicatii__icon">🦴</div>
+        <div class="ind-card">
+          <div class="ind-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
           <h3>Umăr</h3>
           <p>Capsulită, coafă rotatori</p>
         </div>
-        <div class="indicatii__card">
-          <div class="indicatii__icon">🦵</div>
+        <div class="ind-card">
+          <div class="ind-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 7l4-4 4 4M8 17l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <h3>Genunchi</h3>
           <p>Gonartroză, menisc</p>
         </div>
-        <div class="indicatii__card">
-          <div class="indicatii__icon">🔄</div>
+        <div class="ind-card">
+          <div class="ind-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
           <h3>Șold</h3>
           <p>Coxartroză, bursită</p>
         </div>
-        <div class="indicatii__card">
-          <div class="indicatii__icon">🦶</div>
+        <div class="ind-card">
+          <div class="ind-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 20l2-8 3 4 2-6 2 4 2-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <h3>Picior & gleznă</h3>
           <p>Entorse, fasciită plantară</p>
         </div>
-        <div class="indicatii__card">
-          <div class="indicatii__icon">🩹</div>
+        <div class="ind-card">
+          <div class="ind-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
           <h3>Entorse & fracturi</h3>
           <p>Recuperare post-ghips</p>
         </div>
-        <div class="indicatii__card">
-          <div class="indicatii__icon">🧠</div>
+        <div class="ind-card">
+          <div class="ind-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3C9 3 7 5 7 8c0 2 1 3.5 2.5 4.5L8 21h8l-1.5-8.5C16 11.5 17 10 17 8c0-3-2-5-5-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
           <h3>Torticolis</h3>
           <p>Cervicalgii, blocaje</p>
         </div>
-        <div class="indicatii__card">
-          <div class="indicatii__icon">💪</div>
+        <div class="ind-card">
+          <div class="ind-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 12h12M12 6v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
           <h3>Disconfort muscular</h3>
           <p>Contracturi, atrofie</p>
         </div>
-        <div class="indicatii__card">
-          <div class="indicatii__icon">🔥</div>
+        <div class="ind-card ind-card--highlight">
+          <div class="ind-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
           <h3>Faza acută & cronică</h3>
-          <p>Inflamație, durere</p>
+          <p>Inflamație, durere persistentă</p>
         </div>
       </div>
     </div>
@@ -109,166 +177,239 @@
   <!-- SERVICII -->
   <section class="servicii" id="servicii">
     <div class="container">
-      <p class="section-kicker">Ce oferim</p>
-      <h2>Servicii <span>specializate</span></h2>
-      <div class="servicii__grid">
+      <div class="section-head">
+        <p class="kicker">Ce oferim</p>
+        <h2>Terapii <em>specializate</em></h2>
+        <p class="section-sub">Fiecare ședință este adaptată nevoilor tale. Combinăm tehnici manuale cu tehnologie TECAR pentru rezultate maxime.</p>
+      </div>
 
-        <div class="servicii__card">
-          <div class="servicii__head">
-            <h3>Masaj Manual</h3>
-            <p>Terapie manuală profesională pentru recuperare și relaxare profundă</p>
+      <div class="servicii__main">
+        <div class="scard scard--featured">
+          <div class="scard__label">Cel mai solicitat</div>
+          <div class="scard__icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4z" stroke="#00c9a7" stroke-width="1.5"/><path d="M10 16c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="16" r="2" fill="#00c9a7"/></svg>
           </div>
-          <ul class="servicii__list">
+          <h3>Terapie TECAR</h3>
+          <p>Tehnologie de ultimă generație care generează energie endogenă în țesuturi, accelerând vindecarea naturală a corpului. Rezultate vizibile de la prima ședință.</p>
+          <ul class="scard__features">
             <li>
-              <span>Decontracturant pe zonă</span>
-              <span class="tag">25 min</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              TECAR activ — 20 min + 15 min masaj
             </li>
             <li>
-              <span>Decontracturant complet</span>
-              <span class="tag">50 min</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              TECAR simplă — diatermie focalizată
             </li>
             <li>
-              <span>Terapeutic regional</span>
-              <span class="tag">25 min</span>
-            </li>
-            <li>
-              <span>Deep tissue</span>
-              <span class="tag">50 min</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Pachete 5 și 10 ședințe disponibile
             </li>
           </ul>
+          <a href="#tarife" class="btn btn--primary">Vezi tarifele</a>
         </div>
 
-        <div class="servicii__card servicii__card--accent">
-          <div class="servicii__head">
-            <h3>Terapie TECAR</h3>
-            <p>Tehnologie de ultimă generație pentru recuperare accelerată</p>
+        <div class="scard">
+          <div class="scard__icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 16c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round"/><path d="M16 12v4l3 3" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
-          <ul class="servicii__list">
+          <h3>Masaj Manual</h3>
+          <p>Tehnici manuale profesionale aplicate precis pentru a elimina tensiunile musculare, a îmbunătăți circulația și a accelera recuperarea.</p>
+          <ul class="scard__features">
             <li>
-              <span>TECAR activ (+ 15 min masaj)</span>
-              <span class="tag">35 min</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Decontracturant pe zonă sau complet
             </li>
             <li>
-              <span>TECAR simplă</span>
-              <span class="tag">20 min</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Terapeutic regional focalizat
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Deep tissue — țesut profund
             </li>
           </ul>
-          <div class="tecar__note">
-            Diatermie focalizată pentru vindecare profundă
-          </div>
+          <a href="#tarife" class="btn btn--outline">Vezi tarifele</a>
         </div>
 
-        <div class="servicii__card">
-          <div class="servicii__head">
-            <h3>Programe speciale</h3>
-            <p>Protocoale personalizate pentru obiective specifice</p>
+        <div class="scard">
+          <div class="scard__icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 6l2.5 5 5.5.8-4 3.9.9 5.5L16 18.5l-4.9 2.7.9-5.5-4-3.9 5.5-.8L16 6z" stroke="#00c9a7" stroke-width="1.5" stroke-linejoin="round"/></svg>
           </div>
-          <ul class="servicii__list">
-            <li><span>Pregătire pre-efort sportivi</span></li>
-            <li><span>Elasticitate fascie & ligamente</span></li>
-            <li><span>Masaj pentru copii</span></li>
-            <li><span>Masaj de relaxare</span></li>
+          <h3>Programe Speciale</h3>
+          <p>Protocoale personalizate pentru obiective specifice — de la performanță sportivă la relaxare profundă și recuperare pediatrică.</p>
+          <ul class="scard__features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Pregătire pre-efort sportivi
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Masaj pentru copii — postură & dezvoltare
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#00c9a7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Elasticitate fascie & ligamente
+            </li>
           </ul>
+          <a href="#contact" class="btn btn--outline">Discută protocolul</a>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- TARIFE -->
+  <!-- SERVICII DETALIATE (fara preturi) -->
   <section class="tarife" id="tarife">
     <div class="container">
-      <p class="section-kicker">Investiția ta</p>
-      <h2>Tarife <span>transparente</span></h2>
-      <div class="tarife__grid">
-
-        <div class="tarife__group">
-          <h3 class="tarife__label">Masaj Manual</h3>
-          <div class="tarife__row">
-            <div>
-              <p class="tarife__name">Decontracturant pe zonă</p>
-              <p class="tarife__desc">Spate · cervicală · brațe · picior · 25 min</p>
-            </div>
-            <p class="tarife__price">160 <span>lei</span></p>
-          </div>
-          <div class="tarife__row">
-            <div>
-              <p class="tarife__name">Decontracturant complet</p>
-              <p class="tarife__desc">Corp întreg · 50 min</p>
-            </div>
-            <p class="tarife__price">285 <span>lei</span></p>
-          </div>
-          <div class="tarife__row">
-            <div>
-              <p class="tarife__name">Terapeutic regional</p>
-              <p class="tarife__desc">O zonă, focalizat · 25 min</p>
-            </div>
-            <p class="tarife__price">160 <span>lei</span></p>
-          </div>
-          <div class="tarife__row">
-            <div>
-              <p class="tarife__name">Deep tissue</p>
-              <p class="tarife__desc">Țesut profund · 50 min</p>
-            </div>
-            <p class="tarife__price">285 <span>lei</span></p>
-          </div>
-        </div>
-
-        <div class="tarife__group">
-          <h3 class="tarife__label">Terapie TECAR</h3>
-          <div class="tarife__row">
-            <div>
-              <p class="tarife__name">TECAR activ</p>
-              <p class="tarife__desc">20 min TECAR + 15 min masaj · 35 min total</p>
-            </div>
-            <p class="tarife__price">220 <span>lei</span></p>
-          </div>
-          <div class="tarife__row">
-            <div>
-              <p class="tarife__name">TECAR simplă</p>
-              <p class="tarife__desc">Diatermie focalizată · 20 min</p>
-            </div>
-            <p class="tarife__price">120 <span>lei</span></p>
-          </div>
-        </div>
-
+      <div class="section-head">
+        <p class="kicker">Serviciile noastre</p>
+        <h2>Ce <em>includem</em></h2>
+        <p class="section-sub">Fiecare ședință este personalizată. Contactează-ne pentru un tarif adaptat nevoilor tale.</p>
       </div>
 
-      <!-- PACHETE -->
-      <div class="pachete">
-        <h3 class="pachete__title">Pachete TECAR</h3>
-        <div class="pachete__grid">
-          <div class="pachete__card">
-            <p class="pachete__sessions">5 ședințe TECAR</p>
-            <p class="pachete__price">500 <span>lei</span></p>
-            <p class="pachete__save">Economisești 100 lei</p>
-            <a href="#contact" class="btn btn--outline">Alege pachetul</a>
+      <div class="tarife__layout">
+        <div class="tarife__col">
+          <div class="tarife__group-head">
+            <div class="tarife__group-dot"></div>
+            <h3>Masaj Manual</h3>
           </div>
-          <div class="pachete__card pachete__card--featured">
-            <p class="pachete__badge">Recomandat</p>
-            <p class="pachete__sessions">10 ședințe TECAR</p>
-            <p class="pachete__price">850 <span>lei</span></p>
-            <p class="pachete__save">Economisești 350 lei</p>
-            <a href="#contact" class="btn btn--primary">Alege pachetul</a>
+          <div class="trow">
+            <div class="trow__info">
+              <p class="trow__name">Decontracturant pe zonă</p>
+              <p class="trow__desc">Spate · cervicală · brațe · picior</p>
+            </div>
+            <div class="trow__right">
+              <span class="trow__time">25 min</span>
+            </div>
           </div>
-          <div class="pachete__card">
-            <p class="pachete__sessions">TECAR + Masaj</p>
-            <p class="pachete__price">La cerere</p>
-            <p class="pachete__save">Protocol personalizat</p>
-            <a href="#contact" class="btn btn--outline">Întreabă acum</a>
+          <div class="trow">
+            <div class="trow__info">
+              <p class="trow__name">Decontracturant complet</p>
+              <p class="trow__desc">Corp întreg</p>
+            </div>
+            <div class="trow__right">
+              <span class="trow__time">50 min</span>
+            </div>
+          </div>
+          <div class="trow">
+            <div class="trow__info">
+              <p class="trow__name">Terapeutic regional</p>
+              <p class="trow__desc">O zonă, focalizat</p>
+            </div>
+            <div class="trow__right">
+              <span class="trow__time">25 min</span>
+            </div>
+          </div>
+          <div class="trow">
+            <div class="trow__info">
+              <p class="trow__name">Deep tissue</p>
+              <p class="trow__desc">Țesut profund</p>
+            </div>
+            <div class="trow__right">
+              <span class="trow__time">50 min</span>
+            </div>
+          </div>
+
+          <div class="tarife__group-head" style="margin-top:40px">
+            <div class="tarife__group-dot"></div>
+            <h3>Terapie TECAR</h3>
+          </div>
+          <div class="trow">
+            <div class="trow__info">
+              <p class="trow__name">TECAR activ</p>
+              <p class="trow__desc">20 min TECAR + 15 min masaj</p>
+            </div>
+            <div class="trow__right">
+              <span class="trow__time">35 min</span>
+            </div>
+          </div>
+          <div class="trow">
+            <div class="trow__info">
+              <p class="trow__name">TECAR simplă</p>
+              <p class="trow__desc">Diatermie focalizată</p>
+            </div>
+            <div class="trow__right">
+              <span class="trow__time">20 min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarife__pachete">
+          <h3 class="pachete__heading">Pachete disponibile</h3>
+          <p class="pachete__sub">Pachete de ședințe cu discount pentru rezultate optime.</p>
+
+          <div class="pachet">
+            <div class="pachet__top">
+              <p class="pachet__name">Pachet 5 ședințe TECAR</p>
+            </div>
+            <p class="pachet__save">Ideal pentru recuperare fază acută</p>
+            <a href="#contact" class="btn btn--outline btn--full">Solicită tariful</a>
+          </div>
+
+          <div class="pachet pachet--featured">
+            <div class="pachet__badge">Recomandat</div>
+            <div class="pachet__top">
+              <p class="pachet__name">Pachet 10 ședințe TECAR</p>
+            </div>
+            <p class="pachet__save">Cel mai bun raport calitate-preț</p>
+            <a href="#contact" class="btn btn--primary btn--full">Solicită tariful</a>
+          </div>
+
+          <div class="pachet">
+            <div class="pachet__top">
+              <p class="pachet__name">TECAR + Masaj combinat</p>
+            </div>
+            <p class="pachet__save">Protocol personalizat după diagnostic și obiective</p>
+            <a href="#contact" class="btn btn--ghost btn--full">Întreabă la programare</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- QUOTE -->
-  <section class="quote">
-    <div class="container">
-      <blockquote>
-        „Protejează-ți corpul înainte ca durerea <em>să apară.</em>"
-      </blockquote>
-      <p class="quote__author">— Cristian Dan, Kinetoterapeut</p>
+  <!-- DESPRE -->
+  <section class="despre" id="despre">
+    <div class="container despre__inner">
+      <div class="despre__visual">
+        <div class="despre__card-main">
+          <p class="despre__card-kicker">Kinetoterapeut</p>
+          <h3>Cristian Dan</h3>
+          <p>Specialist în recuperare medicală și sportivă, cu expertiză în terapia TECAR și masaj manual terapeutic.</p>
+          <div class="despre__tags">
+            <span>TECAR</span>
+            <span>Masaj manual</span>
+            <span>Kinetoterapie</span>
+            <span>Recuperare sportivă</span>
+          </div>
+        </div>
+        <div class="despre__card-float">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.5 5 5.5.8-4 3.9.9 5.5L10 14.5l-4.9 2.7.9-5.5-4-3.9 5.5-.8L10 2z" stroke="#00c9a7" stroke-width="1.5" stroke-linejoin="round" fill="#00c9a7" fill-opacity="0.2"/></svg>
+          <p>Tekaro Studio</p>
+        </div>
+      </div>
+      <div class="despre__text">
+        <p class="kicker">Despre noi</p>
+        <h2>Primul pas către <em>mobilitate totală</em></h2>
+        <p>La Tekaro Studio, fiecare ședință pornește de la o evaluare atentă a diagnosticului și obiectivelor tale. Combinăm tehnici manuale tradiționale cu tehnologia TECAR de ultimă generație pentru a obține cele mai bune rezultate.</p>
+        <p>Tratăm atât afecțiuni acute, cât și cronice — de la entorse simple la recuperare post-operatorie complexă. Abordăm fiecare caz individual, adaptând protocolul de tratament în funcție de evoluție.</p>
+        <blockquote class="despre__quote">
+          „Protejează-ți corpul înainte ca durerea să apară."
+        </blockquote>
+        <a href="#contact" class="btn btn--primary">Programează o consultație</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div>
+        <h2>Gata să începi recuperarea?</h2>
+        <p>Programează acum și face primul pas către mobilitate totală.</p>
+      </div>
+      <a href="tel:0736844319" class="btn btn--primary btn--lg">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 2h3l1.5 4-2 1.5a11 11 0 005.5 5.5L13 11l4 1.5v3A1.5 1.5 0 0115.5 17C7.5 17 1 10.5 1 2.5A1.5 1.5 0 013.5 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        0736 844 319
+      </a>
     </div>
   </section>
 
@@ -276,19 +417,48 @@
   <section class="contact" id="contact">
     <div class="container contact__inner">
       <div class="contact__text">
-        <p class="section-kicker">Primul pas</p>
-        <h2>Programează <span>ședința</span></h2>
-        <p>Sună sau trimite un mesaj. Stabilim împreună cel mai bun protocol pentru nevoile tale.</p>
-        <a href="tel:0736844319" class="contact__phone">0736 844 319</a>
-        <p class="contact__hint">Luni – Sâmbătă · 09:00 – 20:00</p>
+        <p class="kicker">Contact</p>
+        <h2>Programează <em>ședința</em></h2>
+        <p>Sună sau trimite un mesaj. Stabilim împreună cel mai bun protocol de recuperare pentru tine.</p>
+        <div class="contact__info">
+          <div class="contact__info-row">
+            <div class="contact__info-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 2h3l1.5 4-2 1.5a11 11 0 005.5 5.5L13 11l4 1.5v3A1.5 1.5 0 0115.5 17C7.5 17 1 10.5 1 2.5A1.5 1.5 0 013.5 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <p class="contact__info-label">Telefon</p>
+              <a href="tel:0736844319" class="contact__info-val">0736 844 319</a>
+            </div>
+          </div>
+          <div class="contact__info-row">
+            <div class="contact__info-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="4" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M1 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <p class="contact__info-label">Program</p>
+              <p class="contact__info-val">Luni – Sâmbătă · 09:00 – 20:00</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="contact__card">
-        <h3>Tekaro Studio</h3>
-        <p>Cabinet recuperare medicală & sportivă</p>
-        <div class="contact__divider"></div>
-        <p><strong>Kinetoterapeut:</strong> Cristian Dan</p>
-        <p><strong>Telefon:</strong> 0736 844 319</p>
-        <a href="tel:0736844319" class="btn btn--primary btn--full">Sună acum</a>
+      <div class="contact__form-wrap">
+        <h3>Trimite un mesaj</h3>
+        <form class="contact__form" onsubmit="handleForm(event)">
+          <div class="form__group">
+            <label>Numele tău</label>
+            <input type="text" placeholder="Ion Popescu" required />
+          </div>
+          <div class="form__group">
+            <label>Telefon</label>
+            <input type="tel" placeholder="07XX XXX XXX" required />
+          </div>
+          <div class="form__group">
+            <label>Problemă / Mesaj</label>
+            <textarea placeholder="Descrie pe scurt ce afecțiune ai sau ce tip de ședință dorești..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Trimite cererea</button>
+          <p class="form__note">Te contactăm în maxim 24 de ore.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -296,30 +466,73 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__inner">
-      <a href="#" class="logo">Tekaro<span>Studio</span></a>
-      <p>© 2026 Tekaro Studio · Cabinet recuperare medicală & sportivă</p>
-      <nav>
+      <div class="footer__brand">
+        <a href="#" class="logo">Tekaro<span>Studio</span></a>
+        <p>Cabinet recuperare medicală & sportivă.<br />Kinetoterapeut Cristian Dan.</p>
+      </div>
+      <div class="footer__links">
+        <p class="footer__links-title">Navigare</p>
         <a href="#servicii">Servicii</a>
         <a href="#tarife">Tarife</a>
+        <a href="#despre">Despre</a>
         <a href="#contact">Contact</a>
-      </nav>
+      </div>
+      <div class="footer__contact">
+        <p class="footer__links-title">Contact</p>
+        <a href="tel:0736844319">0736 844 319</a>
+        <p>Luni – Sâmbătă</p>
+        <p>09:00 – 20:00</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 Tekaro Studio · Toate drepturile rezervate</p>
+      </div>
     </div>
   </footer>
 
   <script>
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('nav--scrolled', window.scrollY > 40);
+    });
+
+    // Mobile menu
     function toggleMenu() {
       document.getElementById('mobileMenu').classList.toggle('open');
     }
+
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const target = document.querySelector(a.getAttribute('href'));
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth' });
+          document.getElementById('mobileMenu').classList.remove('open');
         }
       });
     });
-  </script>
 
+    // Form
+    function handleForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Cerere trimisă! Te contactăm în curând.';
+      btn.disabled = true;
+      btn.style.background = '#00a88b';
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) el.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.ind-card, .scard, .trow, .pachet').forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
