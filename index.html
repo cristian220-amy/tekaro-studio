@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tekaro Studio — Kinetoterapeut Cristian Dan</title>
   <meta name="description" content="Kinetoterapeut Cristian Dan — Specialist Terapie TECAR & Masaj Terapeutic. 7+ ani experiență, 4.000+ pacienți. Popești-Leordeni & Crowne Plaza București." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tekaro Studio — Kinetoterapeut Cristian Dan" />
+  <meta property="og:description" content="Specialist Terapie TECAR & Masaj Terapeutic. 7+ ani experiență, 4.000+ pacienți. Popești-Leordeni & Crowne Plaza București." />
+  <meta property="og:url" content="https://cristian220-amy.github.io/tekaro-studio/" />
+  <meta property="og:image" content="https://cristian220-amy.github.io/tekaro-studio/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tekaro Studio — Kinetoterapeut Cristian Dan" />
+  <meta name="twitter:description" content="Specialist Terapie TECAR & Masaj Terapeutic. 7+ ani experiență, 4.000+ pacienți." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
@@ -115,6 +123,7 @@
       </div>
       <div class="hero__visual">
         <div class="hero__card">
+          <div class="hcard__avatar">CD</div>
           <div class="hcard__top">
             <div class="hcard__dot"></div>
             <span>Profil profesional</span>
@@ -139,8 +148,20 @@
             Certificat · Terapeut Masaj & TECAR
           </div>
         </div>
-        <div class="hero__float hero__float--1">Terapie TECAR</div>
-        <div class="hero__float hero__float--2">Recuperare rapidă</div>
+        <div class="hero__float hero__float--1">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <div class="hero__float-title">Terapie TECAR</div>
+            <div class="hero__float-sub">Specialist certificat</div>
+          </div>
+        </div>
+        <div class="hero__float hero__float--2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+          <div>
+            <div class="hero__float-title">2 Locații</div>
+            <div class="hero__float-sub">Popești & București</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="hero__scroll">
@@ -154,17 +175,17 @@
     <div class="container">
       <div class="stats-band__grid">
         <div class="stat-item">
-          <div class="stat-item__num">7+</div>
+          <div class="stat-item__num" data-count="7" data-suffix="+">7+</div>
           <div class="stat-item__label">Ani de experiență</div>
           <div class="stat-item__sub">Practică continuă din 2019</div>
         </div>
         <div class="stat-item">
-          <div class="stat-item__num">4.000+</div>
+          <div class="stat-item__num" data-count="4000" data-suffix="+" data-sep=".">4.000+</div>
           <div class="stat-item__label">Pacienți tratați</div>
           <div class="stat-item__sub">Cu succes documentat</div>
         </div>
         <div class="stat-item">
-          <div class="stat-item__num">100%</div>
+          <div class="stat-item__num" data-count="100" data-suffix="%">100%</div>
           <div class="stat-item__label">Recuperare</div>
           <div class="stat-item__sub">Dedicat fiecărui caz în parte</div>
         </div>
@@ -353,6 +374,76 @@
           <a href="#contact" class="btn btn--outline">Programează-te</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- PREȚURI -->
+  <section class="preturi" id="preturi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Transparență</p>
+        <h2>Prețuri <em>orientative</em></h2>
+        <p class="section-sub">Prețul exact se comunică la programare, în funcție de locație și tipul de ședință. Prima consultație include evaluarea gratuită a diagnosticului.</p>
+      </div>
+      <div class="preturi__grid">
+
+        <div class="pret-card">
+          <div class="pret-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M7 14c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 22c0-2 1.5-3.5 3.5-4.5S11 16 14 16s5 .5 6.5 1.5S23 20 23 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Masaj Terapeutic</h3>
+          <div class="pret-card__price">
+            <span class="pret-card__from">de la</span>
+            <span class="pret-card__val"><!-- PREȚ -->150 lei</span>
+          </div>
+          <p class="pret-card__duration">60 minute · ședință individuală</p>
+          <ul class="pret-card__list">
+            <li>Masaj relaxare profundă</li>
+            <li>Tehnici trigger point</li>
+            <li>Drenaj limfatic manual</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">Programează</a>
+        </div>
+
+        <div class="pret-card pret-card--featured">
+          <div class="pret-card__badge">Cel mai popular</div>
+          <div class="pret-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M15 4L5 16h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Terapie TECAR</h3>
+          <div class="pret-card__price">
+            <span class="pret-card__from">de la</span>
+            <span class="pret-card__val"><!-- PREȚ -->200 lei</span>
+          </div>
+          <p class="pret-card__duration">45–60 minute · ședință individuală</p>
+          <ul class="pret-card__list">
+            <li>Evaluare inițială inclusă</li>
+            <li>Protocol personalizat</li>
+            <li>Rezultate de la prima ședință</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary">Programează</a>
+        </div>
+
+        <div class="pret-card">
+          <div class="pret-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4v20M6 10l8-6 8 6M8 20h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Kinetoterapie</h3>
+          <div class="pret-card__price">
+            <span class="pret-card__from">de la</span>
+            <span class="pret-card__val"><!-- PREȚ -->150 lei</span>
+          </div>
+          <p class="pret-card__duration">60 minute · ședință individuală</p>
+          <ul class="pret-card__list">
+            <li>Exerciții personalizate</li>
+            <li>Recuperare post-traumatică</li>
+            <li>Progres monitorizat continuu</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">Programează</a>
+        </div>
+
+      </div>
+      <p class="preturi__note">* Prețurile variază în funcție de locație (PT Center vs. Crowne Plaza) și complexitatea cazului. Pachetele de ședințe beneficiază de discount — <a href="#contact">contactează-ne</a> pentru detalii.</p>
     </div>
   </section>
 
@@ -764,6 +855,80 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Întrebări frecvente</p>
+        <h2>Ai întrebări? <em>Avem răspunsuri.</em></h2>
+        <p class="section-sub">Tot ce trebuie să știi înainte de prima ședință.</p>
+      </div>
+      <div class="faq__list">
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Câte ședințe sunt necesare pentru recuperare?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Numărul de ședințe variază în funcție de afecțiune și gravitatea ei. Cazurile acute pot necesita 3–5 ședințe, în timp ce recuperările post-operatorii sau afecțiunile cronice pot necesita 10–15 ședințe. Cristian Dan stabilește un plan personalizat chiar la prima consultație.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Pot veni fără bilet de trimitere de la medic?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Da, poți veni fără bilet de trimitere. Cristian Dan va realiza o evaluare completă la prima ședință. Dacă ai investigații (RMN, ecografie, radiografii), adă-le — ajută la personalizarea protocolului, dar nu sunt obligatorii.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Terapia TECAR doare? La ce să mă aștept?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Terapia TECAR este complet nedureroasă — vei simți o căldură plăcută în zona tratată. Procedura durează 30–45 de minute și nu necesită timp de recuperare după. Mulți pacienți simt ameliorarea durerii chiar din prima ședință.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Care este diferența dintre cele două locații?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Ambele locații oferă același standard de îngrijire și același specialist — Cristian Dan. PT Center (Popești-Leordeni) funcționează dimineața (07:00–12:00), iar Crowne Plaza Hotel (București) după-amiaza (13:00–19:00). Alegi în funcție de locație și program.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Acceptați decontare prin Casa de Asigurări?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Momentan serviciile sunt disponibile în regim privat, fără decontare CNAS. Prețul ședinței include consultația și tratamentul complet, fără costuri ascunse. Contactează-ne pentru informații despre pachetele de ședințe cu discount.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Ce trebuie să aduc la prima ședință?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Vino confortabil îmbrăcat (haine sport sau lejere care permit accesul la zona de tratat). Dacă ai investigații medicale (RMN, ecografie, scrisoare medicală), adă-le. Nu este nevoie de altceva — restul îl asigurăm noi.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="container contact__inner">
@@ -852,6 +1017,15 @@
           <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 1.5h2.3l1.1 3-1.5 1.1a8.5 8.5 0 004 4l1.1-1.5 3 1.1v2.3A1.1 1.1 0 0112 13C6 13 1 8 1 2A1.1 1.1 0 012.5 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
           0736 844 319
         </a>
+        <div class="footer__social">
+          <!-- SOCIAL: înlocuiește # cu link-urile reale de Instagram și Facebook -->
+          <a href="#" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
       <div class="footer__links">
         <p class="footer__links-title">Navigare</p>
@@ -953,10 +1127,42 @@
         if (el.isIntersecting) el.target.classList.add('visible');
       });
     }, { threshold: 0.07 });
-    document.querySelectorAll('.ind-card, .scard, .loc-card, .tecar-benefit, .copii-feature, .stat-item, .testi-card, .ba-slider').forEach(function(el) {
+    document.querySelectorAll('.ind-card, .scard, .loc-card, .tecar-benefit, .copii-feature, .stat-item, .testi-card, .ba-slider, .pret-card, .faq-item').forEach(function(el) {
       el.classList.add('reveal');
       observer.observe(el);
     });
+
+    // Counter animation
+    var counted = false;
+    var counterObserver = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting && !counted) {
+        counted = true;
+        document.querySelectorAll('.stat-item__num[data-count]').forEach(function(el) {
+          var target = parseInt(el.dataset.count);
+          var suffix = el.dataset.suffix || '';
+          var sep = el.dataset.sep || '';
+          var duration = 1400;
+          var start = performance.now();
+          function step(now) {
+            var progress = Math.min((now - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var val = Math.round(eased * target);
+            el.textContent = (sep && val >= 1000 ? val.toLocaleString('ro') : val) + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      }
+    }, { threshold: 0.5 });
+    var statsBand = document.querySelector('.stats-band');
+    if (statsBand) counterObserver.observe(statsBand);
+
+    function toggleFaq(btn) {
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); el.querySelector('.faq-item__q').setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    }
 
     // Before/After Slider
     (function() {
