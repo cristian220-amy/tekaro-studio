@@ -138,6 +138,13 @@ h3, h4 { line-height: 1.2; letter-spacing: -0.02em; }
   border-color: rgba(0,0,0,0.12);
 }
 [data-theme="light"] .btn--ghost:hover { background: rgba(0,0,0,0.09); }
+.nav__links .btn--nav,
+.nav__links .btn--nav:hover { color: #ffffff; }
+[data-theme="light"] .btn--nav {
+  background: linear-gradient(135deg, var(--c-teal), var(--c-teal2));
+  color: #ffffff;
+  box-shadow: 0 3px 16px rgba(5,150,105,0.40);
+}
 [data-theme="light"] .btn--primary {
   background: linear-gradient(135deg, #00e5a0 0%, #00c484 100%);
   color: #ffffff;
