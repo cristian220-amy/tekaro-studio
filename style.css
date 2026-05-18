@@ -1479,81 +1479,6 @@ a.contact__info-val:hover { color: var(--c-teal); }
 .loc-card__nav { display: flex; gap: 10px; }
 .btn--nav-map { flex: 1; justify-content: center; padding: 12px 14px; font-size: 0.82rem; gap: 7px; }
 
-/* ===== BEFORE / AFTER SLIDER ===== */
-.before-after { padding: 140px 0; background: var(--c-bg2); }
-.ba-slider {
-  position: relative;
-  max-width: 860px;
-  margin: 64px auto 0;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  border: 1px solid var(--c-gold-border);
-  user-select: none;
-  cursor: col-resize;
-  height: 420px;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-}
-.ba-img { position: absolute; inset: 0; }
-.ba-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.ba-img .img-placeholder { aspect-ratio: unset; height: 100%; border-radius: 0; border: none; background: var(--c-bg3); }
-.ba-before { z-index: 1; }
-.ba-after { z-index: 2; clip-path: inset(0 0 0 50%); }
-.ba-label {
-  position: absolute;
-  bottom: 18px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 100px;
-  z-index: 4;
-  pointer-events: none;
-}
-.ba-label--before { left: 18px; background: rgba(0,0,0,0.58); color: #fff; }
-.ba-label--after { right: 18px; background: var(--c-gold); color: #0c1008; font-weight: 800; }
-.ba-handle {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  height: 100%;
-  width: 44px;
-  z-index: 10;
-  transform: translateX(-50%);
-  cursor: col-resize;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.ba-handle__line {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent 0%, var(--c-gold) 12%, var(--c-gold) 88%, transparent 100%);
-}
-.ba-handle__circle {
-  position: relative;
-  z-index: 2;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--c-gold);
-  color: #0c1008;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(201,168,76,0.55), 0 0 0 4px rgba(201,168,76,0.15);
-  flex-shrink: 0;
-  transition: transform 0.15s;
-}
-.ba-handle:active .ba-handle__circle { transform: scale(1.1); }
-@media (max-width: 600px) {
-  .ba-slider { height: 260px; margin-top: 48px; }
-}
-
 /* ===== PREȚURI ===== */
 .preturi { padding: 140px 0; background: var(--c-bg); }
 .preturi__grid {
@@ -2060,7 +1985,7 @@ a.contact__info-val:hover { color: var(--c-teal); }
 /* ===== PRINT STYLES ===== */
 @media print {
   .nav, .wa-btn, .back-to-top, .cookie-banner,
-  .scroll-progress, .hero__video, .ba-slider,
+  .scroll-progress, .hero__video,
   .harti, .galerie, .gallery-modal { display: none !important; }
   body { background: #fff; color: #000; font-size: 12pt; }
   .hero { min-height: auto; padding: 40px 0; }
