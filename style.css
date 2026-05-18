@@ -2990,3 +2990,27 @@ img:not([data-src]) { opacity: 1; }
 }
 .section-separator__line { flex: 1; height: 1px; background: var(--c-border); }
 .section-separator__icon { color: var(--c-teal); flex-shrink: 0; }
+
+/* ===== 404 SUGGESTIONS ===== */
+.page-404__suggestions { margin-top: 40px; }
+.page-404__suggestions-label { font-size: 0.85rem; color: var(--c-gray); margin-bottom: 16px; }
+.page-404__links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.page-404__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-sm);
+  color: var(--c-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  background: var(--c-bg2);
+}
+.page-404__link:hover {
+  border-color: var(--c-teal);
+  color: var(--c-teal);
+  background: var(--c-teal3);
+}
