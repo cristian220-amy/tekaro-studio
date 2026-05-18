@@ -328,6 +328,37 @@
   sections.forEach(function (s) { io.observe(s.el); });
 }());
 
+/* ===== REVEAL ANIMATIONS (IntersectionObserver) ===== */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if (!els.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function (el) { io.observe(el); });
+}());
+
+/* ===== SKILL BARS ANIMATION ===== */
+(function () {
+  var bars = document.querySelectorAll('.skill-bar__fill');
+  if (!bars.length || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('animated');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  bars.forEach(function (b) { io.observe(b); });
+}());
+
 /* ===== LAZY LOAD imagini cu data-src ===== */
 (function () {
   if (!('IntersectionObserver' in window)) return;
