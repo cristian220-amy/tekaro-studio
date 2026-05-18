@@ -3,6 +3,22 @@
    Funcționalități interactive suplimentare
    ============================================================ */
 
+/* ===== LOADING SCREEN ===== */
+(function () {
+  var loader = document.getElementById('pageLoader');
+  if (!loader) return;
+  function hide() {
+    loader.classList.add('loader--hidden');
+    setTimeout(function () { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 650);
+  }
+  if (document.readyState === 'complete') {
+    setTimeout(hide, 350);
+  } else {
+    window.addEventListener('load', function () { setTimeout(hide, 350); });
+    setTimeout(hide, 3000);
+  }
+}());
+
 /* ===== SCROLL PROGRESS BAR ===== */
 (function () {
   var bar = document.getElementById('scrollProgress');

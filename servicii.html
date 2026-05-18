@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ro" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicii de Recuperare — Tekaro Studio | Kinetoterapeut Cristian Dan</title>
+  <meta name="description" content="Terapie TECAR, masaj terapeutic, kinetoterapie și recuperare sportivă la Tekaro Studio. Specialist Cristian Dan, Popești-Leordeni și Crowne Plaza București." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00e5a0" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Servicii Tekaro Studio",
+    "url": "https://cristian220-amy.github.io/tekaro-studio/servicii.html",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Terapie TECAR", "url": "https://cristian220-amy.github.io/tekaro-studio/servicii.html#tecar" },
+      { "@type": "ListItem", "position": 2, "name": "Masaj Terapeutic", "url": "https://cristian220-amy.github.io/tekaro-studio/servicii.html#masaj" },
+      { "@type": "ListItem", "position": 3, "name": "Kinetoterapie", "url": "https://cristian220-amy.github.io/tekaro-studio/servicii.html#kinetoterapie" },
+      { "@type": "ListItem", "position": 4, "name": "Recuperare Sportivă", "url": "https://cristian220-amy.github.io/tekaro-studio/servicii.html#sport" },
+      { "@type": "ListItem", "position": 5, "name": "Recuperare Post-Operator", "url": "https://cristian220-amy.github.io/tekaro-studio/servicii.html#postoperator" },
+      { "@type": "ListItem", "position": 6, "name": "Terapie Copii & Juniori", "url": "https://cristian220-amy.github.io/tekaro-studio/servicii.html#copii" }
+    ]
+  }
+  </script>
+  <script>
+    (function() {
+      var t = localStorage.getItem('ts-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body class="servicii-page">
+
+  <!-- LOADING SCREEN -->
+  <div class="loader" id="pageLoader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__logo">Tekaro<span>Studio</span></div>
+      <div class="loader__bar"><div class="loader__fill"></div></div>
+      <p class="loader__tagline">Recuperare · Performanță · Wellness</p>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="logo">Tekaro<span>Studio</span></a>
+      <nav class="nav__links">
+        <a href="index.html#servicii">Servicii</a>
+        <a href="index.html#locatii">Locații</a>
+        <a href="index.html#despre">Despre</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="tel:0736844319" class="nav__phone">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 1.5h2.3l1.1 3-1.5 1.1a8.5 8.5 0 004 4l1.1-1.5 3 1.1v2.3A1.1 1.1 0 0112 13C6 13 1 8 1 2A1.1 1.1 0 012.5 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          0736 844 319
+        </a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Schimbă tema">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.22 3.22l1.41 1.41M13.36 13.36l1.41 1.41M3.22 14.78l1.41-1.41M13.36 4.64l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M15.5 10.5A6.5 6.5 0 017.5 2.5a6.5 6.5 0 000 13 6.5 6.5 0 008-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <a href="index.html#contact" class="btn btn--nav">Programează</a>
+      </nav>
+      <button class="nav__burger" aria-label="Meniu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="index.html#servicii" onclick="toggleMenu()">Servicii</a>
+      <a href="index.html#locatii" onclick="toggleMenu()">Locații</a>
+      <a href="index.html#despre" onclick="toggleMenu()">Despre</a>
+      <a href="blog/index.html" onclick="toggleMenu()">Blog</a>
+      <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+      <button class="theme-toggle theme-toggle--mobile" onclick="toggleTheme()">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.22 3.22l1.41 1.41M13.36 13.36l1.41 1.41M3.22 14.78l1.41-1.41M13.36 4.64l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M15.5 10.5A6.5 6.5 0 017.5 2.5a6.5 6.5 0 000 13 6.5 6.5 0 008-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Schimbă tema
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SERVICII -->
+  <div class="svc-hero">
+    <div class="container">
+      <p class="kicker">Ce oferim</p>
+      <h1>Servicii de <em>recuperare</em> și kinetoterapie</h1>
+      <p>Protocoale individualizate, tehnologie TECAR de ultimă generație și 7+ ani de experiență practică — totul sub supravegherea unui singur specialist, de la prima evaluare până la revenirea completă.</p>
+    </div>
+  </div>
+
+  <!-- GRID SERVICII -->
+  <main>
+    <div class="container">
+      <div class="svc-grid">
+
+        <!-- 1. TECAR -->
+        <div class="svc-card" id="tecar">
+          <div class="svc-card__icon">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+              <path d="M13 3v4M13 19v4M3 13h4M19 13h4M5.93 5.93l2.83 2.83M17.24 17.24l2.83 2.83M5.93 20.07l2.83-2.83M17.24 8.76l2.83-2.83" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="13" cy="13" r="4" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <h2 class="svc-card__title">Terapie TECAR</h2>
+          <p class="svc-card__desc">Tehnoloiga TECAR (Transfer of Energy Capacitive and Resistive) utilizează curent electric de înaltă frecvență pentru a stimula procesele naturale de vindecare la nivel celular. Crește temperatura tisulară în profunzime, accelerează metabolismul local și reduce inflamația fără niciun efect negativ asupra țesuturilor.</p>
+          <div class="svc-card__details">
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              <span>Durată ședință: <strong>30–45 minute</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2C5.24 2 3 4.24 3 7c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="currentColor" opacity=".8"/></svg>
+              <span>Disponibil la: <strong>ambele locații</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4zM2 4l2-2h8l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Indicat pentru: dureri cronice, inflamații, recuperare post-traumatică, afecțiuni musculare și articulare</span>
+            </div>
+          </div>
+          <div class="svc-card__price">150–220 RON<span>/ ședință</span></div>
+          <div class="svc-card__cta">
+            <a href="index.html#contact" class="btn btn--primary">Programează o ședință TECAR</a>
+          </div>
+        </div>
+
+        <!-- 2. MASAJ TERAPEUTIC -->
+        <div class="svc-card" id="masaj">
+          <div class="svc-card__icon">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+              <path d="M7 19c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M13 13V7M10 9.5l3-2.5 3 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="13" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <h2 class="svc-card__title">Masaj Terapeutic</h2>
+          <p class="svc-card__desc">Masajul terapeutic diferă fundamental de masajul de relaxare prin faptul că vizează structuri anatomice specifice: mușchi contracturați, fascii tensionate, trigger points și zone cu circulație deficitară. Protocoalele aplicate la Tekaro Studio combină tehnici clasice cu metode moderne de decoaptare articulară.</p>
+          <div class="svc-card__details">
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              <span>Durată ședință: <strong>45–60 minute</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2C5.24 2 3 4.24 3 7c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="currentColor" opacity=".8"/></svg>
+              <span>Disponibil la: <strong>ambele locații</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4zM2 4l2-2h8l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Indicat pentru: contracturi musculare, cervicalgii, lombalgii, oboseală musculară, stres cronic</span>
+            </div>
+          </div>
+          <div class="svc-card__price">160–200 RON<span>/ ședință</span></div>
+          <div class="svc-card__cta">
+            <a href="index.html#contact" class="btn btn--primary">Programează masaj terapeutic</a>
+          </div>
+        </div>
+
+        <!-- 3. KINETOTERAPIE -->
+        <div class="svc-card" id="kinetoterapie">
+          <div class="svc-card__icon">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+              <circle cx="13" cy="6" r="2.5" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M8 12.5c0-2.76 2.24-5 5-5s5 2.24 5 5v2H8v-2zM8 14.5v5.5M18 14.5v5.5M13 14.5V20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2 class="svc-card__title">Kinetoterapie</h2>
+          <p class="svc-card__desc">Kinetoterapia reprezintă recuperarea funcției motorii prin mișcare controlată și exerciții specifice. La Tekaro Studio, fiecare program kinetic este construit pe baza evaluării inițiale complete și adaptat permanent în funcție de progresul pacientului. Scopul final este întotdeauna independența funcțională completă.</p>
+          <div class="svc-card__details">
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              <span>Durată ședință: <strong>50–60 minute</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2C5.24 2 3 4.24 3 7c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="currentColor" opacity=".8"/></svg>
+              <span>Disponibil la: <strong>ambele locații</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4zM2 4l2-2h8l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Indicat pentru: recuperare post-fractură, artroze, scolioză, posturi vicioase, deficiențe motorii</span>
+            </div>
+          </div>
+          <div class="svc-card__price">180–250 RON<span>/ ședință</span></div>
+          <div class="svc-card__cta">
+            <a href="index.html#contact" class="btn btn--primary">Începe programul kinetic</a>
+          </div>
+        </div>
+
+        <!-- 4. RECUPERARE SPORTIVĂ -->
+        <div class="svc-card" id="sport">
+          <div class="svc-card__icon">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+              <circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M8 13l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2 class="svc-card__title">Recuperare Sportivă</h2>
+          <p class="svc-card__desc">Sportivii au nevoie de protocoale de recuperare specifice care să respecte cerințele performanței. Cristian Dan lucrează cu sportivi amatori și semi-profesioniști, adaptând protocoalele de recuperare la caracteristicile fiecărui sport și la obiectivele de revenire în competiție. Recuperare mai rapidă, risc minim de recidivă.</p>
+          <div class="svc-card__details">
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              <span>Durată ședință: <strong>45–70 minute</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2C5.24 2 3 4.24 3 7c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="currentColor" opacity=".8"/></svg>
+              <span>Disponibil la: <strong>ambele locații</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4zM2 4l2-2h8l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Indicat pentru: entorse, rupturi musculare, tendinite, sindromul rotulian, recuperare post-competiție</span>
+            </div>
+          </div>
+          <div class="svc-card__price">200–280 RON<span>/ ședință</span></div>
+          <div class="svc-card__cta">
+            <a href="index.html#contact" class="btn btn--primary">Programare recuperare sport</a>
+          </div>
+        </div>
+
+        <!-- 5. POST-OPERATOR -->
+        <div class="svc-card" id="postoperator">
+          <div class="svc-card__icon">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+              <path d="M13 4v18M4 13h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2 class="svc-card__title">Recuperare Post-Operatorie</h2>
+          <p class="svc-card__desc">Recuperarea după intervenții chirurgicale ortopedice (proteze de șold sau genunchi, artroscopii, reparări ligamentare) necesită un protocol riguros, etapizat și continuu monitorizat. Cristian Dan colaborează cu medicii ortopezi pentru a alinia recuperarea cu prescripțiile chirurgicale și a evita complicațiile.</p>
+          <div class="svc-card__details">
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              <span>Protocol tipic: <strong>8–16 ședințe</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2C5.24 2 3 4.24 3 7c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="currentColor" opacity=".8"/></svg>
+              <span>Disponibil la: <strong>ambele locații</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4zM2 4l2-2h8l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Indicat pentru: proteze articulare, artroscopii, reparări LIA/LIP, fracturi operate, decompresii vertebrale</span>
+            </div>
+          </div>
+          <div class="svc-card__price">220–300 RON<span>/ ședință</span></div>
+          <div class="svc-card__cta">
+            <a href="index.html#contact" class="btn btn--primary">Evaluare post-operatorie</a>
+          </div>
+        </div>
+
+        <!-- 6. COPII & JUNIORI -->
+        <div class="svc-card" id="copii">
+          <div class="svc-card__icon">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+              <circle cx="13" cy="6" r="2.5" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M9 11h8l-1 5H10l-1-5zM11 16l-2 6M15 16l2 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2 class="svc-card__title">Terapie Copii &amp; Juniori</h2>
+          <p class="svc-card__desc">Copiii nu sunt adulți în miniatură — sistemul lor muscular și scheletal este în dezvoltare activă și necesită abordări complet diferite. Cristian Dan aplică protocoale specifice vârstei pentru corectarea posturii, tratarea scoliozei, recuperarea traumatismelor sportive juvenile și îmbunătățirea coordonării motorii.</p>
+          <div class="svc-card__details">
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              <span>Vârstă: <strong>6–18 ani</strong> · Durată: 40–50 minute</span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2C5.24 2 3 4.24 3 7c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="currentColor" opacity=".8"/></svg>
+              <span>Disponibil la: <strong>ambele locații</strong></span>
+            </div>
+            <div class="svc-card__detail">
+              <svg class="svc-card__detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4zM2 4l2-2h8l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Indicat pentru: scolioză, cifoza, postura viciată, picioare plate, traumatisme sportive, coordonare motorie</span>
+            </div>
+          </div>
+          <div class="svc-card__price">150–200 RON<span>/ ședință</span></div>
+          <div class="svc-card__cta">
+            <a href="index.html#contact" class="btn btn--primary">Programare copii / juniori</a>
+          </div>
+        </div>
+
+      </div><!-- /svc-grid -->
+    </div><!-- /container -->
+
+    <!-- CTA BAND -->
+    <section style="background: var(--c-bg2); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); padding: 80px 0; text-align: center; margin-top: 20px;">
+      <div class="container">
+        <p class="kicker">Nu știi ce serviciu ți se potrivește?</p>
+        <h2 style="font-family:'Playfair Display',serif; font-size: clamp(1.6rem,3vw,2.4rem); margin-bottom:16px;">Sună și vorbim — fără presiune</h2>
+        <p style="color:var(--c-gray); max-width:520px; margin:0 auto 36px; line-height:1.75;">Cristian Dan îți explică în 5 minute care protocol este potrivit pentru problema ta și cum arată prima ședință de evaluare.</p>
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+          <a href="tel:0736844319" class="btn btn--primary">
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M2.5 1.5h2.3l1.1 3-1.5 1.1a8.5 8.5 0 004 4l1.1-1.5 3 1.1v2.3A1.1 1.1 0 0112 13C6 13 1 8 1 2A1.1 1.1 0 012.5 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            Sună acum · 0736 844 319
+          </a>
+          <a href="index.html#contact" class="btn btn--outline">Trimite un mesaj</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER minimal -->
+  <footer style="padding: 48px 0; background: var(--c-bg); border-top: 1px solid var(--c-border);">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+      <a href="index.html" class="logo">Tekaro<span>Studio</span></a>
+      <div style="display:flex; gap:24px; flex-wrap:wrap; font-size:0.85rem; color:var(--c-gray);">
+        <a href="confidentialitate.html" style="color:var(--c-gray);">Confidențialitate</a>
+        <a href="termeni.html" style="color:var(--c-gray);">Termeni</a>
+        <a href="index.html#contact" style="color:var(--c-teal); font-weight:600;">Programare</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a class="wa-btn" href="https://wa.me/40736844319?text=Salut!%20Vreau%20s%C4%83%20m%C4%83%20programez%20pentru%20o%20%C8%99edin%C8%9B%C4%83." target="_blank" rel="noopener noreferrer" aria-label="Contactează pe WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 2.5C8.1 2.5 2.5 8.1 2.5 15c0 2.2.6 4.4 1.7 6.3L2.5 27.5l6.4-1.7A12.4 12.4 0 0015 27.5c6.9 0 12.5-5.6 12.5-12.5S21.9 2.5 15 2.5zm6.2 17.4c-.3.8-1.4 1.4-2.3 1.6-.6.1-1.4.2-4.1-.9-3.4-1.4-5.6-4.8-5.8-5-.2-.2-1.4-1.9-1.4-3.6 0-1.7.9-2.5 1.2-2.8.3-.3.7-.4 1-.4h.7c.3 0 .6.1.9.7l1.1 2.8c.1.3.1.6-.1.9l-.5.7-.4.5c.2.4 1 1.6 2.1 2.5 1.4 1.1 2.6 1.5 3 1.6l.9-1c.3-.3.6-.4 1-.2l2.7 1.3c.3.2.5.4.5.8v.5z"/>
+    </svg>
+  </a>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('nav').classList.toggle('nav--scrolled', window.scrollY > 40);
+    });
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+    function toggleTheme() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('ts-theme', next);
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

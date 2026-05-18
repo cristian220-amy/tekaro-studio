@@ -1,0 +1,40 @@
+{
+  "name": "Tekaro Studio — Kinetoterapeut Cristian Dan",
+  "short_name": "Tekaro Studio",
+  "description": "Recuperare medicală și sportivă. Specialist Terapie TECAR. Popești-Leordeni & Crowne Plaza București.",
+  "start_url": "/tekaro-studio/",
+  "display": "standalone",
+  "background_color": "#030b06",
+  "theme_color": "#00e5a0",
+  "orientation": "portrait-primary",
+  "lang": "ro",
+  "categories": ["health", "medical"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Programează",
+      "short_name": "Programare",
+      "description": "Trimite o cerere de programare",
+      "url": "/tekaro-studio/#contact"
+    },
+    {
+      "name": "Servicii",
+      "short_name": "Servicii",
+      "description": "Vezi toate serviciile",
+      "url": "/tekaro-studio/servicii.html"
+    }
+  ]
+}

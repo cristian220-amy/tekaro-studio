@@ -17,6 +17,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00e5a0" />
 
   <!-- JSON-LD LocalBusiness schema — SEO local Google Maps -->
   <script type="application/ld+json">
@@ -76,6 +78,15 @@
 </head>
 <body>
 
+  <!-- LOADING SCREEN -->
+  <div class="loader" id="pageLoader" aria-hidden="true" role="status">
+    <div class="loader__inner">
+      <div class="loader__logo">Tekaro<span>Studio</span></div>
+      <div class="loader__bar"><div class="loader__fill"></div></div>
+      <p class="loader__tagline">Recuperare · Performanță · Wellness</p>
+    </div>
+  </div>
+
   <!-- SKIP TO CONTENT (accesibilitate) -->
   <a href="#servicii" class="skip-link">Sari la conținut</a>
 
@@ -91,6 +102,7 @@
         <a href="#proces">Cum funcționează</a>
         <a href="#locatii">Locații</a>
         <a href="#despre">Despre</a>
+        <a href="blog/index.html">Blog</a>
         <a href="tel:0736844319" class="nav__phone">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 1.5h2.3l1.1 3-1.5 1.1a8.5 8.5 0 004 4l1.1-1.5 3 1.1v2.3A1.1 1.1 0 0112 13C6 13 1 8 1 2A1.1 1.1 0 012.5 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
           0736 844 319
@@ -1299,6 +1311,77 @@
             <a href="confidentialitate.html">Politica de Confidențialitate</a>.
           </p>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="blog-preview" id="blog">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Articole & Sfaturi</p>
+        <h2>Informații utile despre <em>recuperare</em></h2>
+        <p class="section-sub">Articole scrise de Cristian Dan — kinetoterapeut cu 7+ ani de practică.</p>
+      </div>
+      <div class="blog-preview__grid">
+
+        <article class="blog-card">
+          <div class="blog-card__img-wrap">
+            <div class="blog-card__img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="3" y="6" width="30" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h30M12 6v6M24 6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span class="blog-card__tag">Terapie TECAR</span>
+          </div>
+          <div class="blog-card__body">
+            <time class="blog-card__date" datetime="2026-05-01">1 mai 2026</time>
+            <h3 class="blog-card__title">Ce este Terapia TECAR și cum funcționează</h3>
+            <p class="blog-card__excerpt">Tehnologia TECAR folosește energia capacitivă și rezistivă pentru a stimula procesele naturale de vindecare ale organismului. Află cum funcționează și pentru ce afecțiuni este indicată.</p>
+            <a href="blog/tecar-ce-este.html" class="blog-card__link">
+              Citește articolul
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card__img-wrap">
+            <div class="blog-card__img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="3" y="6" width="30" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h30M12 6v6M24 6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span class="blog-card__tag">Recuperare</span>
+          </div>
+          <div class="blog-card__body">
+            <time class="blog-card__date" datetime="2026-04-15">15 aprilie 2026</time>
+            <h3 class="blog-card__title">Recuperare după ghips: ce trebuie să știi</h3>
+            <p class="blog-card__excerpt">După scoaterea ghipsului, mușchii sunt atofiați și articulațiile rigide. Descoperă pașii corecți pentru o recuperare completă și rapidă, fără riscul complicațiilor.</p>
+            <a href="blog/recuperare-dupa-ghips.html" class="blog-card__link">
+              Citește articolul
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card__img-wrap">
+            <div class="blog-card__img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="3" y="6" width="30" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h30M12 6v6M24 6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span class="blog-card__tag">Prevenție</span>
+          </div>
+          <div class="blog-card__body">
+            <time class="blog-card__date" datetime="2026-04-01">1 aprilie 2026</time>
+            <h3 class="blog-card__title">Durerile de spate: cauze, prevenție și când apelezi la specialist</h3>
+            <p class="blog-card__excerpt">80% din populație va experimenta dureri de spate cel puțin o dată în viață. Află care sunt cauzele frecvente, ce poți face acasă și când este momentul să ceri ajutor profesional.</p>
+            <a href="blog/dureri-de-spate.html" class="blog-card__link">
+              Citește articolul
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+      <div class="blog-preview__cta">
+        <a href="blog/index.html" class="btn btn--outline">Vezi toate articolele</a>
       </div>
     </div>
   </section>
