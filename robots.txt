@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cristian220-amy.github.io/tekaro-studio/sitemap.xml
+
+# Disallow admin or generated paths (none currently)
+# Disallow: /admin/

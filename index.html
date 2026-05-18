@@ -17,6 +17,56 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- JSON-LD LocalBusiness schema — SEO local Google Maps -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://cristian220-amy.github.io/tekaro-studio/#business",
+        "name": "Tekaro Studio — Kinetoterapeut Cristian Dan",
+        "description": "Cabinet recuperare medicală și sportivă. Specialist Terapie TECAR și Masaj Terapeutic. 7+ ani experiență, 4000+ pacienți tratați.",
+        "url": "https://cristian220-amy.github.io/tekaro-studio/",
+        "telephone": "+40736844319",
+        "priceRange": "150–300 RON",
+        "image": "https://cristian220-amy.github.io/tekaro-studio/og-image.jpg",
+        "medicalSpecialty": "PhysicalTherapy",
+        "location": [
+          {
+            "@type": "Place",
+            "name": "PT Center Popești-Leordeni",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Cheiul Dâmboviței",
+              "addressLocality": "Popești-Leordeni",
+              "addressCountry": "RO"
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr,Sa 07:00-12:00"
+          },
+          {
+            "@type": "Place",
+            "name": "Crowne Plaza Hotel București",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Poligrafiei nr. 1",
+              "addressLocality": "București",
+              "addressCountry": "RO"
+            },
+            "openingHours": "Mo,Tu,We,Th,Fr,Sa 13:00-19:00"
+          }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Cristian Dan",
+          "jobTitle": "Kinetoterapeut & Specialist TECAR"
+        }
+      }
+    ]
+  }
+  </script>
+
   <script>
     (function() {
       var t = localStorage.getItem('ts-theme') || 'dark';
@@ -26,12 +76,19 @@
 </head>
 <body>
 
+  <!-- SKIP TO CONTENT (accesibilitate) -->
+  <a href="#servicii" class="skip-link">Sari la conținut</a>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
   <!-- NAV -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="#" class="logo">Tekaro<span>Studio</span></a>
       <nav class="nav__links">
         <a href="#servicii">Servicii</a>
+        <a href="#proces">Cum funcționează</a>
         <a href="#locatii">Locații</a>
         <a href="#despre">Despre</a>
         <a href="tel:0736844319" class="nav__phone">
@@ -55,6 +112,7 @@
     </div>
     <div class="nav__mobile" id="mobileMenu">
       <a href="#servicii" onclick="toggleMenu()">Servicii</a>
+      <a href="#proces" onclick="toggleMenu()">Cum funcționează</a>
       <a href="#locatii" onclick="toggleMenu()">Locații</a>
       <a href="#despre" onclick="toggleMenu()">Despre</a>
       <a href="tel:0736844319" onclick="toggleMenu()" class="nav__mobile-phone">
@@ -373,6 +431,63 @@
           </ul>
           <a href="#contact" class="btn btn--outline">Programează-te</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCES — Cum funcționează o ședință -->
+  <section class="proces" id="proces">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Pas cu pas</p>
+        <h2>Cum decurge o <em>ședință</em></h2>
+        <p class="section-sub">De la primul contact până la recuperarea completă — știi exact la ce să te aștepți.</p>
+      </div>
+      <div class="proc-track">
+
+        <div class="proc-step">
+          <div class="proc-step__num">1</div>
+          <div class="proc-step__body">
+            <h3>Programare telefonică sau WhatsApp</h3>
+            <p>Suni sau trimiți un mesaj pe WhatsApp — stabilim împreună data, locația (PT Center sau Crowne Plaza) și tipul de ședință. Răspuns în maxim 2 ore în program.</p>
+          </div>
+        </div>
+
+        <div class="proc-step">
+          <div class="proc-step__num">2</div>
+          <div class="proc-step__body">
+            <h3>Evaluare inițială gratuită</h3>
+            <p>La prima ședință, Cristian Dan face o evaluare completă a diagnosticului tău — postură, mobilitate, istoricul afecțiunii. Fără costuri suplimentare față de ședință.</p>
+          </div>
+        </div>
+
+        <div class="proc-step">
+          <div class="proc-step__num">3</div>
+          <div class="proc-step__body">
+            <h3>Protocol personalizat</h3>
+            <p>Pe baza evaluării, stabilim împreună planul de tratament: număr de ședințe, frecvență, tehnici utilizate (TECAR, masaj manual, kinetoterapie) și obiective clare.</p>
+          </div>
+        </div>
+
+        <div class="proc-step">
+          <div class="proc-step__num">4</div>
+          <div class="proc-step__body">
+            <h3>Ședințe de terapie</h3>
+            <p>Fiecare ședință durează 45–60 de minute. Lucrăm precis, fără grăbire. Vei simți diferența de la primele aplicații — reducerea durerii și îmbunătățirea mobilității.</p>
+          </div>
+        </div>
+
+        <div class="proc-step">
+          <div class="proc-step__num">5</div>
+          <div class="proc-step__body">
+            <h3>Monitorizare și exerciții acasă</h3>
+            <p>Primești un set de exerciții personalizate pentru acasă care susțin recuperarea între ședințe. Cristian urmărește progresul și ajustează protocolul la fiecare vizită.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="proc-cta">
+        <a href="#contact" class="btn btn--primary btn--lg">Programează prima ședință</a>
       </div>
     </div>
   </section>
@@ -727,6 +842,58 @@
     </div>
   </section>
 
+  <!-- HARTI — Google Maps embed ambele locații -->
+  <section class="harti" id="harti">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Găsește-ne</p>
+        <h2>Suntem <em>aproape</em> de tine</h2>
+        <p class="section-sub">Dimineața la Popești-Leordeni, după-amiaza în centrul Bucureștiului — alegi ce ți se potrivește.</p>
+      </div>
+      <div class="harti__grid">
+
+        <div class="harti-card">
+          <div class="harti-card__header">
+            <div class="harti-card__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C7.239 2 5 4.239 5 7c0 3.75 5 11 5 11s5-7.25 5-11c0-2.761-2.239-5-5-5z" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.4"/></svg>
+            </div>
+            <div>
+              <div class="harti-card__title">PT Center — Popești-Leordeni</div>
+              <div class="harti-card__sub">Cheiul Dâmboviței · Luni–Sâmbătă 07:00–12:00</div>
+            </div>
+          </div>
+          <iframe
+            src="https://maps.google.com/maps?q=Cheiul+Dambovitei+Popesti+Leordeni&output=embed&z=15"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            title="PT Center Popești-Leordeni pe hartă">
+          </iframe>
+        </div>
+
+        <div class="harti-card">
+          <div class="harti-card__header">
+            <div class="harti-card__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C7.239 2 5 4.239 5 7c0 3.75 5 11 5 11s5-7.25 5-11c0-2.761-2.239-5-5-5z" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.4"/></svg>
+            </div>
+            <div>
+              <div class="harti-card__title">Crowne Plaza Hotel — București</div>
+              <div class="harti-card__sub">Poligrafiei nr. 1 · Luni–Sâmbătă 13:00–19:00</div>
+            </div>
+          </div>
+          <iframe
+            src="https://maps.google.com/maps?q=Crowne+Plaza+Hotel+Poligrafiei+Bucuresti&output=embed&z=15"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Crowne Plaza Hotel București pe hartă">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- DESPRE -->
   <section class="despre" id="despre">
     <div class="container despre__inner">
@@ -851,9 +1018,174 @@
           </div>
         </div>
 
+        <div class="testi-card reveal">
+          <div class="testi-stars">
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+          </div>
+          <p class="testi-text">„Aveam o hernie de disc care mă împiedica să stau la birou mai mult de o oră. După 7 ședințe TECAR, durerile s-au redus cu 80%. Nu mai am nevoie de antiinflamatoare și am reluat sportul."</p>
+          <div class="testi-author">
+            <span class="testi-author__name">Mihai C.</span>
+            <span class="testi-author__role">37 ani · Hernie disc L4-L5</span>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="testi-stars">
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+          </div>
+          <p class="testi-text">„Recuperare completă după ruptura ligamentului încrucișat anterior. Am revenit la fotbal la 8 luni post-operație. Cristian mi-a dat încredere când nu mai credeam că voi mai putea juca."</p>
+          <div class="testi-author">
+            <span class="testi-author__name">Bogdan T.</span>
+            <span class="testi-author__role">22 ani · Recuperare post-LIA</span>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="testi-stars">
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 1l2.3 4.6 5.1.8-3.7 3.6.9 5.1L9 12.6l-4.6 2.5.9-5.1-3.7-3.6 5.1-.8L9 1z"/></svg>
+          </div>
+          <p class="testi-text">„Fasciita plantară mă chinuia de 2 ani. Am încercat totul — branțuri, geluri, injecții. 5 ședințe TECAR cu Cristian și durerea a dispărut complet. Recomand cu toată convingerea."</p>
+          <div class="testi-author">
+            <span class="testi-author__name">Ioana M.</span>
+            <span class="testi-author__role">44 ani · Fasciită plantară cronică</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- GALERIE FOTO -->
+  <section class="galerie" id="galerie">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Galerie</p>
+        <h2>Cabinet &amp; <em>echipamente</em></h2>
+        <p class="section-sub">Spații curate, echipamente de ultimă generație. Click pe orice fotografie pentru a o vedea mai mare.</p>
+      </div>
+      <div class="gal-grid">
+
+        <!-- Card 1 — featured (span 2×2) -->
+        <div class="gal-item reveal"
+             data-src=""
+             data-caption="Cabinet PT Center — Popești-Leordeni">
+          <div class="gal-item__placeholder">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" opacity="0.5"><rect x="2" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M13 8l2-4h6l2 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Cabinet PT Center</span>
+          </div>
+          <div class="gal-item__overlay">
+            <div class="gal-item__zoom">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.35-4.35M8 11h6M11 8v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <div class="gal-item__caption">Cabinet PT Center — Popești-Leordeni</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gal-item reveal"
+             data-src=""
+             data-caption="Aparatul TECAR — terapie de ultimă generație">
+          <div class="gal-item__placeholder">
+            <svg width="28" height="28" viewBox="0 0 36 36" fill="none" opacity="0.5"><rect x="2" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M13 8l2-4h6l2 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Aparat TECAR</span>
+          </div>
+          <div class="gal-item__overlay">
+            <div class="gal-item__zoom">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.35-4.35M8 11h6M11 8v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <div class="gal-item__caption">Aparatul TECAR</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gal-item reveal"
+             data-src=""
+             data-caption="Ședință de masaj terapeutic">
+          <div class="gal-item__placeholder">
+            <svg width="28" height="28" viewBox="0 0 36 36" fill="none" opacity="0.5"><rect x="2" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M13 8l2-4h6l2 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Ședință masaj</span>
+          </div>
+          <div class="gal-item__overlay">
+            <div class="gal-item__zoom">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.35-4.35M8 11h6M11 8v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <div class="gal-item__caption">Ședință de masaj terapeutic</div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="gal-item reveal"
+             data-src=""
+             data-caption="Crowne Plaza Hotel — locația din București">
+          <div class="gal-item__placeholder">
+            <svg width="28" height="28" viewBox="0 0 36 36" fill="none" opacity="0.5"><rect x="2" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M13 8l2-4h6l2 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Crowne Plaza Hotel</span>
+          </div>
+          <div class="gal-item__overlay">
+            <div class="gal-item__zoom">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.35-4.35M8 11h6M11 8v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <div class="gal-item__caption">Crowne Plaza Hotel — București</div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="gal-item reveal"
+             data-src=""
+             data-caption="Recuperare pediatrică — Copii & Juniori">
+          <div class="gal-item__placeholder">
+            <svg width="28" height="28" viewBox="0 0 36 36" fill="none" opacity="0.5"><rect x="2" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M13 8l2-4h6l2 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Copii &amp; Juniori</span>
+          </div>
+          <div class="gal-item__overlay">
+            <div class="gal-item__zoom">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.35-4.35M8 11h6M11 8v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <div class="gal-item__caption">Recuperare pediatrică</div>
+        </div>
+
+      </div>
+
+      <p style="text-align:center; margin-top:28px; font-size:0.82rem; color:var(--c-gray)">
+        Fotografii în curs de adăugare. Revino în curând sau vizitează-ne direct la cabinet.
+      </p>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Galerie foto">
+    <div class="glb-inner">
+      <button class="glb-close" id="glbClose" aria-label="Închide">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button class="glb-prev" aria-label="Fotografie anterioară">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <img class="glb-img" src="" alt="Fotografie galerie" style="display:none" />
+      <div class="glb-placeholder" id="glbPlaceholder">
+        <svg width="40" height="40" viewBox="0 0 36 36" fill="none" opacity="0.35"><rect x="2" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>Fotografie indisponibilă momentan</span>
+      </div>
+      <button class="glb-next" aria-label="Fotografie următoare">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="glb-caption"></p>
+      <p class="glb-counter"></p>
+    </div>
+  </div>
 
   <!-- FAQ -->
   <section class="faq" id="faq">
@@ -923,6 +1255,118 @@
           <div class="faq-item__a">
             <p>Vino confortabil îmbrăcat (haine sport sau lejere care permit accesul la zona de tratat). Dacă ai investigații medicale (RMN, ecografie, scrisoare medicală), adă-le. Nu este nevoie de altceva — restul îl asigurăm noi.</p>
           </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Câte ședințe sunt necesare pentru recuperare?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Depinde de diagnostic și de stadiul afecțiunii. Afecțiunile acute (entorse, contracturi recente) pot necesita 3–5 ședințe. Afecțiunile cronice (artroze, recuperare post-operatorie) pot necesita 8–15 ședințe sau mai mult. La prima consultație, Cristian îți va comunica un plan estimativ bazat pe evaluarea ta specifică.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Terapia TECAR este dureroasă?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Nu, terapia TECAR este nedureroasă. Pacienții simt o căldură plăcută în zona tratată — acesta este semnul că energia electromagnetică acționează în profunzimea țesuturilor. Intensitatea se ajustează individual, astfel încât procedura să fie confortabilă pentru fiecare pacient.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Pot combina terapia TECAR cu masajul în aceeași ședință?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Da, deseori combinăm ambele tehnici în cadrul aceleiași ședințe pentru rezultate optime. TECAR pregătește țesuturile profunde (reduce inflamația, crește circulația), iar masajul terapeutic lucrează pe stratul muscular și fascial. Cristian va decide combinația potrivită pentru cazul tău.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Există contraindicații pentru terapia TECAR?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Ca orice terapie, TECAR are câteva contraindicații: sarcina, prezența unui stimulator cardiac (pacemaker), tumori maligne active în zona de tratament, tromboflebită acută. La programare, Cristian face o anamneză completă și stabilește dacă TECAR este indicat în cazul tău. Siguranța pacientului este prioritatea absolută.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__q" onclick="toggleFaq(this)" aria-expanded="false">
+            Oferiți și servicii la domiciliu?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__a">
+            <p>Momentan activăm exclusiv în cadrul celor două locații (PT Center Popești-Leordeni și Crowne Plaza Hotel București), unde avem acces la echipamente profesionale. Dacă mobilitatea îți este limitată și nu poți ajunge la cabinet, contactează-ne — vom identifica împreună o soluție.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DE CE NOI — avantaje diferențiatoare -->
+  <section class="avantaje" id="avantaje">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">De ce Tekaro Studio</p>
+        <h2>Mai mult decât o <em>ședință</em></h2>
+        <p class="section-sub">Nu oferim tratamente standardizate. Fiecare pacient primește atenție individuală, protocol personalizat și comunicare directă cu specialistul.</p>
+      </div>
+      <div class="avantaje__grid">
+
+        <div class="av-card reveal">
+          <div class="av-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3l2.5 8H24l-6.5 4.7 2.5 8L14 19l-6 4.7 2.5-8L4 11h7.5L14 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Specialist unic — nu asistenți</h3>
+          <p>Lucrezi direct cu Cristian Dan la fiecare ședință. Nu ești preluat de personal auxiliar după prima evaluare — continuitatea terapiei e garantată.</p>
+        </div>
+
+        <div class="av-card reveal">
+          <div class="av-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14a8 8 0 1016 0A8 8 0 006 14z" stroke="currentColor" stroke-width="1.5"/><path d="M14 10v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Flexibilitate maximă de program</h3>
+          <p>Două locații, program continuu Luni–Sâmbătă de la 07:00 la 19:00. Dimineața la Popești-Leordeni, după-amiaza în centrul Bucureștiului.</p>
+        </div>
+
+        <div class="av-card reveal">
+          <div class="av-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M7 14l5 5 9-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Rezultate documentate</h3>
+          <p>7+ ani de practică cu protocoale clinice verificate. Feedback activ de la pacienți după fiecare serie de ședințe — adaptăm în timp real.</p>
+        </div>
+
+        <div class="av-card reveal">
+          <div class="av-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4C9.582 4 6 7.582 6 12c0 6 8 16 8 16s8-10 8-16c0-4.418-3.582-8-8-8z" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Locații premium</h3>
+          <p>Activăm în spații profesionale cu echipamente de ultimă generație — sală de fitness dedicată și centrul wellness Crowne Plaza Hotel 5 stele.</p>
+        </div>
+
+        <div class="av-card reveal">
+          <div class="av-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="11" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M4 24c0-3.866 3.134-7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="17" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M20 14v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Specializare pediatrică</h3>
+          <p>Protocoale dedicate copiilor și juniorilor — o nișă rară la kinetoterapeuți independenți. Comunicare directă și atenție adaptată vârstei.</p>
+        </div>
+
+        <div class="av-card reveal">
+          <div class="av-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 7h18M5 14h12M5 21h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Comunicare directă</h3>
+          <p>Suni sau scrii pe WhatsApp și primești răspuns de la Cristian — nu de la un call center. Programare simplă, fără formulare complicate.</p>
         </div>
 
       </div>
@@ -1055,6 +1499,28 @@
       </div>
     </div>
   </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Înapoi sus">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M4 9l5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <!-- COOKIE CONSENT BANNER (GDPR) -->
+  <div class="cookie-banner" id="cookieBanner" role="alert" aria-live="polite">
+    <div class="container cookie-banner__inner">
+      <div class="cookie-banner__text">
+        <p>
+          <strong>Folosim cookie-uri</strong> pentru a îmbunătăți experiența pe site.
+          Continuând navigarea ești de acord cu utilizarea cookie-urilor necesare.
+          Citește <a href="confidentialitate.html">Politica de Confidențialitate</a>.
+        </p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button id="cookieDecline" class="btn btn--ghost btn--sm">Refuz</button>
+        <button id="cookieAccept" class="btn btn--primary btn--sm">Accept</button>
+      </div>
+    </div>
+  </div>
 
   <!-- WHATSAPP BUTTON -->
   <a
@@ -1191,5 +1657,6 @@
       document.addEventListener('touchend', function() { dragging = false; });
     })();
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
