@@ -4,72 +4,144 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Politică de Confidențialitate — Tekaro Studio</title>
+  <meta name="description" content="Politica de confidențialitate Tekaro Studio. Cum colectăm, folosim și protejăm datele tale personale conform GDPR." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
   <script>
     (function() {
       var t = localStorage.getItem('ts-theme') || 'dark';
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <style>
-    .legal-page { max-width: 760px; margin: 0 auto; padding: 140px 24px 80px; }
-    .legal-page h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; margin-bottom: 12px; color: var(--c-white); }
-    .legal-page .meta { color: var(--c-gray); font-size: 0.85rem; margin-bottom: 48px; }
-    .legal-page h2 { font-size: 1.15rem; font-weight: 700; color: var(--c-teal); margin: 36px 0 12px; }
-    .legal-page p, .legal-page li { font-size: 0.95rem; color: var(--c-white); line-height: 1.75; opacity: 0.85; }
-    .legal-page ul { padding-left: 20px; margin: 12px 0; }
-    .legal-page li { margin-bottom: 6px; }
-    .legal-back { display: inline-flex; align-items: center; gap: 8px; color: var(--c-teal); text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-bottom: 48px; }
-    .legal-back:hover { text-decoration: underline; }
-  </style>
 </head>
-<body style="background: var(--c-bg);">
-  <div class="legal-page">
-    <a href="index.html" class="legal-back">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Înapoi la site
-    </a>
-    <h1>Politică de Confidențialitate</h1>
-    <p class="meta">Ultima actualizare: mai 2026 · Tekaro Studio — Kinetoterapeut Cristian Dan · Conform GDPR (Regulamentul UE 2016/679)</p>
+<body>
 
-    <h2>1. Cine prelucrează datele tale</h2>
-    <p>Operator de date: Cristian Dan, kinetoterapeut independent, cu activitate la PT Center (Popești-Leordeni) și Crowne Plaza Hotel (București). Contact: <strong>0736 844 319</strong>.</p>
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="logo">Tekaro<span>Studio</span></a>
+      <nav class="nav__links">
+        <a href="servicii.html">Servicii</a>
+        <a href="index.html#locatii">Locații</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Schimbă tema">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.22 3.22l1.41 1.41M13.36 13.36l1.41 1.41M3.22 14.78l1.41-1.41M13.36 4.64l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M15.5 10.5A6.5 6.5 0 017.5 2.5a6.5 6.5 0 000 13 6.5 6.5 0 008-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a href="index.html#contact" class="btn btn--nav">Programează</a>
+      </nav>
+      <button class="nav__burger" aria-label="Meniu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="servicii.html" onclick="toggleMenu()">Servicii</a>
+      <a href="index.html#locatii" onclick="toggleMenu()">Locații</a>
+      <a href="blog/index.html" onclick="toggleMenu()">Blog</a>
+      <a href="index.html#contact" onclick="toggleMenu()">Contact & Programare</a>
+    </div>
+  </header>
 
-    <h2>2. Ce date colectăm</h2>
-    <p>Prin formularul de contact de pe site colectăm:</p>
-    <ul>
-      <li>Nume și prenume</li>
-      <li>Număr de telefon</li>
-      <li>Locația preferată pentru ședință</li>
-      <li>Mesajul/problema descrisă de tine</li>
-    </ul>
-    <p>Site-ul nu folosește cookies de tracking sau analiză de trafic terță parte.</p>
+  <!-- CONTENT -->
+  <main>
+    <div class="legal-page">
 
-    <h2>3. Scopul prelucrării</h2>
-    <p>Datele colectate sunt folosite exclusiv pentru a te contacta în vederea stabilirii unei programări și a oferi servicii de kinetoterapie/recuperare. Nu sunt folosite în scopuri de marketing sau transmise unor terțe părți comerciale.</p>
+      <a href="index.html" class="legal-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Înapoi la site
+      </a>
 
-    <h2>4. Temeiul legal</h2>
-    <p>Prelucrarea se bazează pe consimțământul tău (Art. 6(1)(a) GDPR), exprimat prin completarea și trimiterea formularului de contact.</p>
+      <h1>Politică de Confidențialitate</h1>
+      <p class="meta">Ultima actualizare: 18 mai 2026 · Tekaro Studio — Kinetoterapeut Cristian Dan · Conform GDPR (Regulamentul UE 2016/679)</p>
 
-    <h2>5. Durata stocării</h2>
-    <p>Datele sunt stocate pe platforma Formspree (procesator de date, UE-compliant) pe durata necesară gestionării relației terapeutice, maximum 2 ani. Poți solicita ștergerea oricând.</p>
+      <h2>1. Cine suntem și cine prelucrează datele tale</h2>
+      <p>Operator de date cu caracter personal: <strong>Cristian Dan</strong>, kinetoterapeut independent, cu activitate la:</p>
+      <ul>
+        <li><strong>PT Center Popești-Leordeni</strong> — Cheiul Dâmboviței, Popești-Leordeni, Ilfov</li>
+        <li><strong>Crowne Plaza Hotel București</strong> — Bd. Poligrafiei nr. 1, Sector 1, București</li>
+      </ul>
+      <p>Contact: <strong>0736 844 319</strong> · <strong>tekarostudio@gmail.com</strong></p>
 
-    <h2>6. Drepturile tale</h2>
-    <p>Conform GDPR, ai dreptul la:</p>
-    <ul>
-      <li>Acces la datele tale personale</li>
-      <li>Rectificarea datelor incorecte</li>
-      <li>Ștergerea datelor («dreptul de a fi uitat»)</li>
-      <li>Portabilitatea datelor</li>
-      <li>Retragerea consimțământului oricând</li>
-      <li>Depunerea unei plângeri la ANSPDCP (www.dataprotection.ro)</li>
-    </ul>
+      <h2>2. Ce date colectăm și de unde</h2>
+      <p>Prin intermediul site-ului tekaro-studio, colectăm date exclusiv prin formularul de contact. Datele furnizate voluntar de tine sunt:</p>
+      <ul>
+        <li>Nume și prenume</li>
+        <li>Număr de telefon</li>
+        <li>Locația preferată pentru ședință (PT Center sau Crowne Plaza)</li>
+        <li>Descrierea problemei sau tipul de ședință dorit</li>
+      </ul>
+      <p>Site-ul <strong>nu utilizează cookies de tracking, analytics sau publicitate terță parte</strong>. Singurul cookie/stocare locală folosit este preferința ta de temă (dark/light) și consimțământul cookie, stocate local în browser-ul tău — nu pe serverele noastre.</p>
 
-    <h2>7. Contact</h2>
-    <p>Pentru exercitarea drepturilor sau orice întrebare legată de confidențialitate, contactează-ne la <strong>0736 844 319</strong> sau prin formularul de pe site.</p>
-  </div>
+      <h2>3. Scopul și temeiul prelucrării</h2>
+      <p>Datele colectate prin formularul de contact sunt folosite exclusiv pentru:</p>
+      <ul>
+        <li>Contactarea ta în vederea stabilirii programării</li>
+        <li>Comunicarea detaliilor legate de ședință (locație, oră, pregătire)</li>
+        <li>Gestionarea relației terapeutice pe durata tratamentului</li>
+      </ul>
+      <p><strong>Temeiul legal</strong> al prelucrării este consimțământul tău explicit (Art. 6 alin. 1 lit. a din GDPR), exprimat prin completarea și trimiterea formularului de contact. Poți retrage consimțământul oricând, fără consecințe.</p>
+      <p>Datele tale <strong>nu sunt folosite</strong> pentru marketing, nu sunt vândute, închiriate sau transmise unor terțe părți comerciale.</p>
+
+      <h2>4. Unde sunt stocate datele</h2>
+      <p>Formularul de contact folosește platforma <strong>Formspree</strong> (formspree.io), un procesor de date cu sediul în Statele Unite ale Americii, care respectă cerințele GDPR prin mecanismul Standard Contractual Clauses (SCC). Formspree transmite datele formularului direct la adresa noastră de email și le stochează temporar pe serverele lor securizate.</p>
+      <p>Datele transmise prin Formspree sunt supuse și <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Politicii de Confidențialitate Formspree</a>.</p>
+
+      <h2>5. Durata stocării</h2>
+      <p>Datele tale sunt stocate pe durata necesară gestionării relației terapeutice, cu un maxim de <strong>2 ani</strong> de la ultima interacțiune. La cererea ta, datele vor fi șterse imediat, indiferent de această perioadă.</p>
+
+      <h2>6. Drepturile tale conform GDPR</h2>
+      <p>Ai următoarele drepturi cu privire la datele tale personale:</p>
+      <ul>
+        <li><strong>Dreptul de acces</strong> — poți solicita o copie a datelor pe care le deținem despre tine</li>
+        <li><strong>Dreptul la rectificare</strong> — poți solicita corectarea datelor incorecte sau incomplete</li>
+        <li><strong>Dreptul la ștergere</strong> («dreptul de a fi uitat») — poți solicita ștergerea datelor tale</li>
+        <li><strong>Dreptul la restricționarea prelucrării</strong> — poți solicita limitarea modului în care folosim datele tale</li>
+        <li><strong>Dreptul la portabilitate</strong> — poți solicita datele tale într-un format structurat, uzual, citibil automat</li>
+        <li><strong>Dreptul de opoziție</strong> — poți obiecta la prelucrarea datelor tale</li>
+        <li><strong>Dreptul de a retrage consimțământul</strong> — oricând, fără a afecta legalitatea prelucrării anterioare</li>
+        <li><strong>Dreptul de a depune plângere</strong> — la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP), <a href="https://www.dataprotection.ro" target="_blank" rel="noopener">www.dataprotection.ro</a></li>
+      </ul>
+
+      <h2>7. Securitatea datelor</h2>
+      <p>Luăm măsuri tehnice și organizatorice rezonabile pentru a proteja datele tale împotriva accesului neautorizat, pierderii sau distrugerii. Comunicațiile prin site sunt protejate prin HTTPS (TLS). Accesul la datele din formulare este limitat exclusiv la Cristian Dan.</p>
+
+      <h2>8. Modificări ale acestei politici</h2>
+      <p>Ne rezervăm dreptul de a actualiza această politică de confidențialitate. Orice modificare semnificativă va fi indicată prin actualizarea datei din partea de sus a acestei pagini. Continuarea utilizării site-ului după modificări constituie acceptarea noii politici.</p>
+
+      <h2>9. Contact pentru exercitarea drepturilor</h2>
+      <p>Pentru orice solicitare legată de datele tale personale sau pentru exercitarea drepturilor de mai sus, ne poți contacta la:</p>
+      <ul>
+        <li>Telefon / WhatsApp: <strong>0736 844 319</strong></li>
+        <li>Email: <strong>tekarostudio@gmail.com</strong></li>
+      </ul>
+      <p>Vom răspunde solicitărilor în termen de maximum <strong>30 de zile</strong>, conform GDPR.</p>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="padding:48px 0; background:var(--c-bg); border-top:1px solid var(--c-border); margin-top:0;">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+      <a href="index.html" class="logo">Tekaro<span>Studio</span></a>
+      <div style="display:flex; gap:24px; flex-wrap:wrap; font-size:0.85rem;">
+        <a href="termeni.html" style="color:var(--c-gray);">Termeni și Condiții</a>
+        <a href="index.html#contact" style="color:var(--c-teal); font-weight:600;">Programare</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('nav').classList.toggle('nav--scrolled', window.scrollY > 40);
+    });
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+    function toggleTheme() {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('ts-theme', next);
+    }
+  </script>
 </body>
 </html>

@@ -4,61 +4,159 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Termeni și Condiții — Tekaro Studio</title>
+  <meta name="description" content="Termenii și condițiile de utilizare ale site-ului Tekaro Studio și ale serviciilor de kinetoterapie oferite de Cristian Dan." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
   <script>
     (function() {
       var t = localStorage.getItem('ts-theme') || 'dark';
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <style>
-    .legal-page { max-width: 760px; margin: 0 auto; padding: 140px 24px 80px; }
-    .legal-page h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; margin-bottom: 12px; color: var(--c-white); }
-    .legal-page .meta { color: var(--c-gray); font-size: 0.85rem; margin-bottom: 48px; }
-    .legal-page h2 { font-size: 1.15rem; font-weight: 700; color: var(--c-teal); margin: 36px 0 12px; }
-    .legal-page p, .legal-page li { font-size: 0.95rem; color: var(--c-white); line-height: 1.75; opacity: 0.85; }
-    .legal-page ul { padding-left: 20px; margin: 12px 0; }
-    .legal-page li { margin-bottom: 6px; }
-    .legal-back { display: inline-flex; align-items: center; gap: 8px; color: var(--c-teal); text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-bottom: 48px; }
-    .legal-back:hover { text-decoration: underline; }
-  </style>
 </head>
-<body style="background: var(--c-bg);">
-  <div class="legal-page">
-    <a href="index.html" class="legal-back">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Înapoi la site
-    </a>
-    <h1>Termeni și Condiții</h1>
-    <p class="meta">Ultima actualizare: mai 2026 · Tekaro Studio — Kinetoterapeut Cristian Dan</p>
+<body>
 
-    <h2>1. Informații generale</h2>
-    <p>Prezentul site web (tekaro-studio) este operat de Cristian Dan, kinetoterapeut independent cu activitate în București și Popești-Leordeni. Prin utilizarea acestui site, ești de acord cu termenii de mai jos.</p>
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="logo">Tekaro<span>Studio</span></a>
+      <nav class="nav__links">
+        <a href="servicii.html">Servicii</a>
+        <a href="index.html#locatii">Locații</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Schimbă tema">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.22 3.22l1.41 1.41M13.36 13.36l1.41 1.41M3.22 14.78l1.41-1.41M13.36 4.64l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M15.5 10.5A6.5 6.5 0 017.5 2.5a6.5 6.5 0 000 13 6.5 6.5 0 008-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a href="index.html#contact" class="btn btn--nav">Programează</a>
+      </nav>
+      <button class="nav__burger" aria-label="Meniu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="servicii.html" onclick="toggleMenu()">Servicii</a>
+      <a href="index.html#locatii" onclick="toggleMenu()">Locații</a>
+      <a href="blog/index.html" onclick="toggleMenu()">Blog</a>
+      <a href="index.html#contact" onclick="toggleMenu()">Contact & Programare</a>
+    </div>
+  </header>
 
-    <h2>2. Servicii oferite</h2>
-    <p>Site-ul prezintă servicii de recuperare medicală și sportivă (kinetoterapie, terapie TECAR, masaj terapeutic). Orice informație medicală prezentă pe site are caracter pur informativ și nu înlocuiește consultul unui medic specialist.</p>
+  <!-- CONTENT -->
+  <main>
+    <div class="legal-page">
 
-    <h2>3. Programări și anulări</h2>
-    <ul>
-      <li>Programările se realizează telefonic sau prin formularul de contact.</li>
-      <li>Anularea sau reprogramarea ședinței se va face cu minimum 24 de ore înainte.</li>
-      <li>Întârzierile peste 15 minute pot conduce la reducerea duratei ședinței.</li>
-    </ul>
+      <a href="index.html" class="legal-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Înapoi la site
+      </a>
 
-    <h2>4. Prețuri și plăți</h2>
-    <p>Prețurile sunt comunicate direct la momentul programării și pot diferi în funcție de locație (PT Center Popești-Leordeni sau Crowne Plaza Hotel București) și tipul de ședință. Plata se efectuează la locație, înainte sau după ședință, conform înțelegerii.</p>
+      <h1>Termeni și Condiții</h1>
+      <p class="meta">Ultima actualizare: 18 mai 2026 · Tekaro Studio — Kinetoterapeut Cristian Dan</p>
 
-    <h2>5. Proprietate intelectuală</h2>
-    <p>Tot conținutul acestui site (texte, imagini, design) aparține Tekaro Studio și este protejat de dreptul de autor. Reproducerea fără acord scris este interzisă.</p>
+      <h2>1. Informații generale</h2>
+      <p>Prezentul site web (<strong>tekaro-studio</strong>) este operat de <strong>Cristian Dan</strong>, kinetoterapeut independent cu activitate profesională la PT Center Popești-Leordeni și Crowne Plaza Hotel București. Prin accesarea și utilizarea acestui site, ești de acord cu termenii și condițiile prezentate mai jos în integralitatea lor.</p>
+      <p>Dacă nu ești de acord cu oricare dintre acești termeni, te rugăm să nu utilizezi site-ul sau serviciile noastre.</p>
 
-    <h2>6. Limitarea răspunderii</h2>
-    <p>Tekaro Studio nu răspunde pentru rezultatele terapeutice care pot varia în funcție de diagnosticul, istoricul medical și cooperarea fiecărui pacient. Fiecare caz este individual.</p>
+      <h2>2. Natura serviciilor oferite</h2>
+      <p>Tekaro Studio oferă servicii de:</p>
+      <ul>
+        <li>Kinetoterapie și recuperare funcțională</li>
+        <li>Terapie TECAR (Transfer of Energy Capacitive and Resistive)</li>
+        <li>Masaj terapeutic și de recuperare</li>
+        <li>Recuperare sportivă</li>
+        <li>Recuperare post-operatorie și post-traumatică</li>
+        <li>Terapie pentru copii și juniori (6–18 ani)</li>
+      </ul>
+      <p><strong>Important:</strong> Orice informație medicală prezentă pe acest site are caracter exclusiv informativ și nu înlocuiește în niciun caz consultul unui medic specialist. Cristian Dan este kinetoterapeut licențiat — nu medic. Diagnosticarea afecțiunilor este de competența exclusivă a medicilor.</p>
 
-    <h2>7. Contact</h2>
-    <p>Pentru orice întrebări legate de acești termeni, ne poți contacta la <strong>0736 844 319</strong> sau prin formularul de pe site.</p>
-  </div>
+      <h2>3. Programări</h2>
+      <p>Programările se realizează prin:</p>
+      <ul>
+        <li>Formularul de contact de pe site</li>
+        <li>Apel telefonic la <strong>0736 844 319</strong></li>
+        <li>Mesaj WhatsApp la <strong>0736 844 319</strong></li>
+      </ul>
+      <p>Programarea devine confirmată doar după confirmarea explicită din partea noastră (prin telefon, WhatsApp sau email). Simpla trimitere a formularului nu garantează disponibilitatea slotului de timp solicitat.</p>
+
+      <h2>4. Anulări și reprogramări</h2>
+      <ul>
+        <li>Anularea sau reprogramarea trebuie notificată cu minimum <strong>24 de ore</strong> înainte de ora programată</li>
+        <li>Anulările în mai puțin de 24 de ore pot atrage taxarea parțială a ședinței, la discreția terapeutului</li>
+        <li>Absența nemotivată (<em>no-show</em>) fără notificare se consideră ședință consumată</li>
+        <li>Întârzierile de peste <strong>15 minute</strong> pot conduce la reducerea corespunzătoare a duratei ședinței, fără reducerea tarifului</li>
+        <li>Tekaro Studio îți rezervă dreptul de a anula sau reprograma o ședință în situații excepționale; vei fi notificat cu cel puțin 2 ore înainte</li>
+      </ul>
+
+      <h2>5. Prețuri și modalități de plată</h2>
+      <p>Prețurile orientative sunt afișate pe pagina de servicii a site-ului. Tariful exact este comunicat la momentul confirmării programării și poate varia în funcție de:</p>
+      <ul>
+        <li>Tipul și durata ședinței</li>
+        <li>Locația aleasă (PT Center Popești-Leordeni sau Crowne Plaza Hotel București)</li>
+        <li>Complexitatea cazului evaluat la prima ședință</li>
+        <li>Pachetele de ședințe (discount la achiziționarea mai multor ședințe)</li>
+      </ul>
+      <p>Plata se efectuează <strong>la locație</strong>, în numerar sau prin alte modalități agreate la momentul programării. Nu se acceptă plata online prin site.</p>
+
+      <h2>6. Contraindicații și responsabilitate medicală</h2>
+      <p>Unele proceduri utilizate la Tekaro Studio (ex: terapia TECAR) au contraindicații specifice. Ești responsabil să informezi terapeutul, înainte de prima ședință, despre:</p>
+      <ul>
+        <li>Implanturile metalice sau electronice (pacemaker, stimulatoare nervoase)</li>
+        <li>Sarcina</li>
+        <li>Afecțiuni oncologice active în zona de tratament</li>
+        <li>Tromboze venoase acute</li>
+        <li>Orice afecțiune cronică sau medicament care ar putea interfera cu tratamentul</li>
+      </ul>
+      <p>Tekaro Studio nu răspunde pentru complicații apărute din cauza informațiilor incomplete furnizate de pacient la evaluarea inițială.</p>
+
+      <h2>7. Limitarea răspunderii pentru rezultate</h2>
+      <p>Rezultatele terapeutice variază în funcție de diagnosticul individual, istoricul medical, respectarea indicațiilor post-ședință și cooperarea activă a pacientului. Tekaro Studio nu poate garanta rezultate identice pentru toți pacienții. Nicio declarație de pe acest site nu constituie o garanție medicală de vindecare.</p>
+
+      <h2>8. Proprietate intelectuală</h2>
+      <p>Tot conținutul acestui site — texte, design, cod sursă, logo, structura paginilor — este proprietatea Tekaro Studio și este protejat de legislația română și europeană privind dreptul de autor. Este interzisă reproducerea, copierea sau distribuirea oricărui conținut fără acordul scris prealabil.</p>
+
+      <h2>9. Link-uri externe</h2>
+      <p>Site-ul poate conține link-uri către resurse externe (Google Maps, Waze, Formspree). Tekaro Studio nu este responsabil pentru conținutul sau practicile de confidențialitate ale acestor site-uri terțe.</p>
+
+      <h2>10. Legea aplicabilă</h2>
+      <p>Acești termeni sunt guvernați de legislația română. Orice litigiu se va soluționa pe cale amiabilă în primul rând, iar în caz de eșec, la instanțele competente din România.</p>
+
+      <h2>11. Modificări ale termenilor</h2>
+      <p>Ne rezervăm dreptul de a modifica acești termeni în orice moment. Modificările intră în vigoare la data publicării pe site. Continuarea utilizării site-ului după publicarea modificărilor constituie acceptarea noilor termeni.</p>
+
+      <h2>12. Contact</h2>
+      <p>Pentru orice întrebări legate de acești termeni:</p>
+      <ul>
+        <li>Telefon / WhatsApp: <strong>0736 844 319</strong></li>
+        <li>Email: <strong>tekarostudio@gmail.com</strong></li>
+      </ul>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="padding:48px 0; background:var(--c-bg); border-top:1px solid var(--c-border);">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+      <a href="index.html" class="logo">Tekaro<span>Studio</span></a>
+      <div style="display:flex; gap:24px; flex-wrap:wrap; font-size:0.85rem;">
+        <a href="confidentialitate.html" style="color:var(--c-gray);">Confidențialitate</a>
+        <a href="index.html#contact" style="color:var(--c-teal); font-weight:600;">Programare</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('nav').classList.toggle('nav--scrolled', window.scrollY > 40);
+    });
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+    function toggleTheme() {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('ts-theme', next);
+    }
+  </script>
 </body>
 </html>
