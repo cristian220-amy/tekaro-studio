@@ -303,6 +303,10 @@ h3, h4 { line-height: 1.2; letter-spacing: -0.02em; }
   align-items: center;
   padding: 130px 0 160px;
   overflow: hidden;
+  background: linear-gradient(135deg, #020d06 0%, #03180a 40%, #051a0e 70%, #0a2a14 100%);
+}
+[data-theme="light"] .hero {
+  background: linear-gradient(135deg, #f0faf5 0%, #e0f5ea 40%, #d0f0e0 70%, #c0ead0 100%);
 }
 .hero__bg {
   position: absolute;
