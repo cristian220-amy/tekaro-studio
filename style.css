@@ -3070,3 +3070,55 @@ img:not([data-src]) { opacity: 1; }
   color: var(--c-gray);
   line-height: 1.7;
 }
+
+/* ===== MOBILE — padding & typography global fix ===== */
+@media (max-width: 768px) {
+  .hero { padding: 100px 0 72px; }
+  .section-head { margin-bottom: 48px; }
+  .cta-band { padding: 56px 0; }
+  .stat-item__num { font-size: 2.2rem; }
+  .stat-item { padding: 36px 16px; }
+  .indicatii,
+  .servicii,
+  .tecar-deep,
+  .copii-juniori,
+  .locatii,
+  .despre,
+  .contact,
+  .testimoniale,
+  .preturi,
+  .faq,
+  .proces,
+  .galerie,
+  .harti,
+  .avantaje,
+  .blog-preview { padding: 80px 0; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 80px 0 52px; }
+  .section-head { margin-bottom: 32px; }
+  .section-head h2 { font-size: 1.8rem; }
+  .section-sub { font-size: 0.95rem; }
+  .cta-band { padding: 40px 0; }
+  .cta-band h2 { font-size: 1.5rem; }
+  .stat-item__num { font-size: 1.9rem; }
+  .indicatii,
+  .servicii,
+  .tecar-deep,
+  .copii-juniori,
+  .locatii,
+  .despre,
+  .contact,
+  .testimoniale,
+  .preturi,
+  .faq,
+  .proces,
+  .galerie,
+  .harti,
+  .avantaje,
+  .blog-preview { padding: 56px 0; }
+  .hero__actions { flex-direction: column; }
+  .hero__actions .btn { width: 100%; justify-content: center; }
+  .footer__legal { flex-wrap: wrap; gap: 12px; }
+}
