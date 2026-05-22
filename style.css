@@ -1328,59 +1328,66 @@ a.contact__info-val:hover { color: var(--c-teal); }
   100% { transform: scale(2.5); opacity: 0; }
 }
 
-.wa-btn {
+.wa-tooltip {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  height: 60px;
+  right: 72px;
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: rgba(10, 20, 14, 0.92);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.wa-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 7px solid transparent;
+  border-right: none;
+  border-left-color: rgba(10, 20, 14, 0.92);
+}
+
+.wa-btn {
+  position: relative;
   width: 60px;
-  border-radius: 30px;
+  height: 60px;
+  border-radius: 50%;
   background: linear-gradient(135deg, #25d366 0%, #128c4e 100%);
   display: flex;
   align-items: center;
-  overflow: hidden;
+  justify-content: center;
   text-decoration: none;
   box-shadow:
     0 4px 20px rgba(37, 211, 102, 0.5),
     0 2px 8px rgba(0, 0, 0, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
-}
-
-.wa-btn__icon {
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
 }
 
 .wa-btn svg { fill: #fff; display: block; }
 
-.wa-btn__label {
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: opacity 0.25s 0.12s, transform 0.25s 0.12s;
-  padding-right: 22px;
-}
-
 @media (hover: hover) {
+  .wa-float:hover .wa-tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
   .wa-btn:hover {
-    width: 215px;
+    transform: scale(1.1);
     box-shadow:
-      0 8px 36px rgba(37, 211, 102, 0.65),
+      0 8px 32px rgba(37, 211, 102, 0.65),
       0 4px 12px rgba(0, 0, 0, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  }
-  .wa-btn:hover .wa-btn__label {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 
