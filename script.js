@@ -375,3 +375,25 @@
   }, { rootMargin: '200px' });
   imgs.forEach(function (img) { io.observe(img); });
 }());
+
+/* ===== HERO PARALLAX ===== */
+(function () {
+  var hero = document.querySelector('.hero');
+  var bg   = document.querySelector('.hero__bg');
+  var glow = document.querySelector('.hero__glow');
+  if (!hero || !bg) return;
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        var y = window.scrollY;
+        if (y < window.innerHeight * 1.5) {
+          bg.style.transform   = 'translateY(' + (y * 0.28) + 'px)';
+          if (glow) glow.style.transform = 'translateY(' + (y * 0.14) + 'px)';
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}());
