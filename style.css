@@ -1221,6 +1221,7 @@ a.contact__info-val:hover { color: var(--c-teal); }
 .form__group input::placeholder,
 .form__group textarea::placeholder { color: var(--c-gray2); }
 .form__intro { font-size: 0.95rem; color: var(--c-gray); margin: -8px 0 20px; }
+.form__social-proof { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--c-teal); margin-bottom: 12px; }
 .form__note { font-size: 0.78rem; color: var(--c-gray); text-align: center; margin-top: 4px; }
 
 /* ===== FOOTER ===== */
