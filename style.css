@@ -303,10 +303,14 @@ h3, h4 { line-height: 1.2; letter-spacing: -0.02em; }
   align-items: center;
   padding: 130px 0 160px;
   overflow: hidden;
-  background: linear-gradient(135deg, #020d06 0%, #03180a 40%, #051a0e 70%, #0a2a14 100%);
+  background: linear-gradient(-45deg, #020d06, #030f07, #061a0a, #020a08, #041206);
+  background-size: 400% 400%;
+  animation: heroBgShift 22s ease infinite;
 }
 [data-theme="light"] .hero {
-  background: linear-gradient(135deg, #f0faf5 0%, #e0f5ea 40%, #d0f0e0 70%, #c0ead0 100%);
+  background: linear-gradient(-45deg, #f0faf5, #e4f7ec, #d6f2e4, #eaf8f2, #f0faf5);
+  background-size: 400% 400%;
+  animation: heroBgShift 22s ease infinite;
 }
 .hero__bg {
   position: absolute;
@@ -328,12 +332,31 @@ h3, h4 { line-height: 1.2; letter-spacing: -0.02em; }
   right: 4%;
   width: 640px;
   height: 640px;
-  background: radial-gradient(circle, rgba(0,229,160,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0,229,160,0.08) 0%, transparent 70%);
   pointer-events: none;
   z-index: 3;
+  animation: heroGlowPulse 7s ease-in-out infinite;
 }
 [data-theme="light"] .hero__glow {
-  background: radial-gradient(circle, rgba(5,150,105,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(5,150,105,0.06) 0%, transparent 70%);
+}
+.hero__glow-2 {
+  position: absolute;
+  bottom: 8%;
+  left: 3%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(0,180,120,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 3;
+  animation: heroGlowPulse 10s ease-in-out infinite 3.5s;
+}
+[data-theme="light"] .hero__glow-2 {
+  background: radial-gradient(circle, rgba(5,150,105,0.04) 0%, transparent 70%);
+}
+@keyframes heroGlowPulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
 }
 .hero__inner {
   position: relative;
@@ -2676,6 +2699,8 @@ img:not([data-src]) { opacity: 1; }
 .reveal-right.revealed { opacity: 1; transform: translateX(0); }
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: none; }
+  .hero { animation: none; }
+  .hero__glow, .hero__glow-2 { animation: none; }
 }
 
 /* ===== HERO GRADIENT ANIMATED BG ===== */
