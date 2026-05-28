@@ -88,8 +88,9 @@
     var ok    = true;
     var name  = form.querySelector('#f-name');
     var phone = form.querySelector('#f-phone');
+    var loc   = form.querySelector('#f-loc');
 
-    [name, phone].forEach(clearErr);
+    [name, phone, loc].forEach(clearErr);
 
     if (!name.value.trim() || name.value.trim().length < 2) {
       setError(name, 'Introduceți un nume valid (minim 2 caractere).'); ok = false;
@@ -97,6 +98,9 @@
     var ph = phone.value.replace(/\s/g, '');
     if (!ph || !/^[\d\+\-]{9,15}$/.test(ph)) {
       setError(phone, 'Număr de telefon invalid (ex: 0736 844 319).'); ok = false;
+    }
+    if (!loc.value) {
+      setError(loc, 'Selectați o locație preferată.'); ok = false;
     }
     return ok;
   }
