@@ -3123,7 +3123,7 @@ img:not([data-src]) { opacity: 1; }
   .section-head { margin-bottom: 48px; }
   .indicatii, .servicii, .tecar-deep, .copii-juniori, .locatii,
   .despre, .contact, .testimoniale, .preturi, .faq,
-  .proces, .galerie, .harti, .avantaje, .blog-preview { padding: 80px 0; }
+  .proces, .galerie, .harti, .avantaje, .blog-preview, .why-section { padding: 80px 0; }
   .stat-item__num { font-size: 2.2rem; }
 }
 @media (max-width: 480px) {
@@ -3131,7 +3131,7 @@ img:not([data-src]) { opacity: 1; }
   .section-head { margin-bottom: 32px; }
   .indicatii, .servicii, .tecar-deep, .copii-juniori, .locatii,
   .despre, .contact, .testimoniale, .preturi, .faq,
-  .proces, .galerie, .harti, .avantaje, .blog-preview { padding: 56px 0; }
+  .proces, .galerie, .harti, .avantaje, .blog-preview, .why-section { padding: 56px 0; }
   .hero__content h1 { font-size: 2.1rem; }
   .stat-item__num { font-size: 1.9rem; }
 }
@@ -3183,7 +3183,11 @@ img:not([data-src]) { opacity: 1; }
   .harti,
   .avantaje,
   .blog-preview { padding: 56px 0; }
+  .why-section { padding: 56px 0; }
   .hero__actions { flex-direction: column; }
   .hero__actions .btn { width: 100%; justify-content: center; }
   .footer__legal { flex-wrap: wrap; gap: 12px; }
 }
+
+.why-section { padding: 100px 0; background: var(--c-bg); }
+@media (max-width: 768px) { .why-section { padding: 80px 0; } }
