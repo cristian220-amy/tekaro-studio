@@ -85,13 +85,11 @@
   }
 
   function validate() {
-    var ok   = true;
+    var ok    = true;
     var name  = form.querySelector('#f-name');
     var phone = form.querySelector('#f-phone');
-    var loc   = form.querySelector('#f-loc');
-    var msg   = form.querySelector('#f-msg');
 
-    [name, phone, loc, msg].forEach(clearErr);
+    [name, phone].forEach(clearErr);
 
     if (!name.value.trim() || name.value.trim().length < 2) {
       setError(name, 'Introduceți un nume valid (minim 2 caractere).'); ok = false;
@@ -99,12 +97,6 @@
     var ph = phone.value.replace(/\s/g, '');
     if (!ph || !/^[\d\+\-]{9,15}$/.test(ph)) {
       setError(phone, 'Număr de telefon invalid (ex: 0736 844 319).'); ok = false;
-    }
-    if (!loc.value) {
-      setError(loc, 'Selectați o locație preferată.'); ok = false;
-    }
-    if (!msg.value.trim() || msg.value.trim().length < 8) {
-      setError(msg, 'Vă rugăm descrieți pe scurt problema (minim 8 caractere).'); ok = false;
     }
     return ok;
   }
@@ -225,24 +217,6 @@
   steps.forEach(function (s) { io.observe(s); });
 }());
 
-/* ===== TEXTAREA CHARACTER COUNTER ===== */
-(function () {
-  var textarea = document.querySelector('#f-msg');
-  if (!textarea) return;
-  var counter = document.createElement('span');
-  counter.className = 'form__char-counter';
-  counter.setAttribute('aria-live', 'polite');
-  textarea.parentNode.appendChild(counter);
-  var MAX = 500;
-  textarea.setAttribute('maxlength', MAX);
-  function update() {
-    var len = textarea.value.length;
-    counter.textContent = len + ' / ' + MAX + ' caractere';
-    counter.style.color = len > MAX * 0.9 ? '#e05454' : '';
-  }
-  textarea.addEventListener('input', update);
-  update();
-}());
 
 /* ===== FAQ — navigare cu tastatura ===== */
 (function () {

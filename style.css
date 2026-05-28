@@ -1220,6 +1220,7 @@ a.contact__info-val:hover { color: var(--c-teal); }
 .form__group select:focus { border-color: var(--c-teal); }
 .form__group input::placeholder,
 .form__group textarea::placeholder { color: var(--c-gray2); }
+.form__intro { font-size: 0.95rem; color: var(--c-gray); margin: -8px 0 20px; }
 .form__note { font-size: 0.78rem; color: var(--c-gray); text-align: center; margin-top: 4px; }
 
 /* ===== FOOTER ===== */
