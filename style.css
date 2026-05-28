@@ -1331,7 +1331,7 @@ a.contact__info-val:hover { color: var(--c-teal); }
 .wa-float {
   position: fixed;
   bottom: 32px;
-  right: 32px;
+  left: 32px;
   z-index: 1000;
 }
 
