@@ -1654,7 +1654,7 @@ a.contact__info-val:hover { color: var(--c-teal); }
 /* ===== BACK TO TOP ===== */
 .back-to-top {
   position: fixed;
-  bottom: 100px;
+  bottom: 32px;
   right: 28px;
   z-index: 900;
   width: 44px;
