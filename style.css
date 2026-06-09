@@ -634,12 +634,13 @@ h3, h4 { line-height: 1.2; letter-spacing: -0.02em; }
 }
 .stat-item:hover { background: var(--c-bg3); }
 .stat-item__num {
-  font-family: 'DM Serif Display', serif;
-  font-size: 3rem;
-  font-weight: 700;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 3.3rem;
+  font-weight: 500;
   color: var(--c-teal);
-  letter-spacing: -0.02em;
-  margin-bottom: 10px;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 12px;
   line-height: 1;
 }
 .stat-item__label {
