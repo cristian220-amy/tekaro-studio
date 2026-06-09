@@ -1361,6 +1361,16 @@ a.contact__info-val:hover { color: var(--c-teal); }
     0 3px 8px rgba(0, 0, 0, 0.22);
 }
 
+.wa-btn:focus-visible {
+  outline: 3px solid var(--c-white);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-btn { transition: none; }
+  .wa-btn:hover { transform: none; }
+}
+
 /* ===== TESTIMONIALE ===== */
 .testimoniale { padding: 140px 0; }
 .testi__grid {
