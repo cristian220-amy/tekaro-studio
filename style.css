@@ -1334,8 +1334,12 @@ a.contact__info-val:hover { color: var(--c-teal); }
 .wa-float {
   position: fixed;
   bottom: 32px;
-  left: 32px;
+  right: 28px;
+  left: auto;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .wa-btn {
@@ -1354,6 +1358,35 @@ a.contact__info-val:hover { color: var(--c-teal); }
 }
 
 .wa-btn svg { display: block; }
+
+.wa-btn--phone {
+  background: #1f3a8a;
+  box-shadow:
+    0 4px 16px rgba(31, 58, 138, 0.4),
+    0 2px 6px rgba(0, 0, 0, 0.18);
+}
+.wa-btn--phone:hover {
+  box-shadow:
+    0 6px 24px rgba(31, 58, 138, 0.52),
+    0 3px 8px rgba(0, 0, 0, 0.22);
+}
+
+/* Link reschimbare acord cookie (GDPR) — injectat în footer */
+.cookie-reopen {
+  display: inline-block;
+  margin-top: 12px;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--c-gray);
+  font-family: inherit;
+  font-size: 0.75rem;
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+.cookie-reopen:hover { opacity: 1; color: var(--c-teal); }
 
 .wa-btn:hover {
   transform: scale(1.05);
@@ -1667,7 +1700,8 @@ a.contact__info-val:hover { color: var(--c-teal); }
 .back-to-top {
   position: fixed;
   bottom: 32px;
-  right: 28px;
+  left: 28px;
+  right: auto;
   z-index: 900;
   width: 44px;
   height: 44px;

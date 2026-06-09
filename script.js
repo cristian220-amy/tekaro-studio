@@ -43,20 +43,61 @@
   });
 }());
 
+/* ===== BUTON TELEFON FLOTANT ===== */
+(function () {
+  var float = document.querySelector('.wa-float');
+  if (!float || float.querySelector('.wa-btn--phone')) return;
+  var phone = document.createElement('a');
+  phone.className = 'wa-btn wa-btn--phone';
+  phone.href = 'tel:+40736844319';
+  phone.setAttribute('aria-label', 'Sună acum');
+  phone.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4.5a1 1 0 011-1H7.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>';
+  float.insertBefore(phone, float.firstChild);
+}());
+
 /* ===== COOKIE CONSENT (GDPR) ===== */
 (function () {
   var banner = document.getElementById('cookieBanner');
   if (!banner) return;
-  if (localStorage.getItem('ts-cookies')) return;
-  setTimeout(function () { banner.classList.add('cookie--visible'); }, 800);
 
-  document.getElementById('cookieAccept').addEventListener('click', function () {
+  var accept = document.getElementById('cookieAccept');
+  var decline = document.getElementById('cookieDecline');
+
+  function show() { banner.classList.add('cookie--visible'); }
+  function hide() { banner.classList.remove('cookie--visible'); }
+
+  if (accept) accept.addEventListener('click', function () {
     localStorage.setItem('ts-cookies', '1');
-    banner.classList.remove('cookie--visible');
+    hide();
   });
-  document.getElementById('cookieDecline').addEventListener('click', function () {
+  if (decline) decline.addEventListener('click', function () {
     localStorage.setItem('ts-cookies', '0');
-    banner.classList.remove('cookie--visible');
+    hide();
+  });
+
+  // Afișare automată la prima vizită
+  if (!localStorage.getItem('ts-cookies')) {
+    setTimeout(show, 800);
+  }
+
+  // Link "Setări cookie-uri" în footer — permite reschimbarea acordului oricând (GDPR)
+  var reopen = document.getElementById('cookieSettings');
+  if (!reopen) {
+    var host = document.querySelector('.footer__bottom .container') ||
+               document.querySelector('.footer__bottom') ||
+               document.querySelector('.footer');
+    if (host) {
+      reopen = document.createElement('button');
+      reopen.id = 'cookieSettings';
+      reopen.type = 'button';
+      reopen.className = 'cookie-reopen';
+      reopen.textContent = 'Setări cookie-uri';
+      host.appendChild(reopen);
+    }
+  }
+  if (reopen) reopen.addEventListener('click', function (e) {
+    e.preventDefault();
+    show();
   });
 }());
 
