@@ -154,7 +154,7 @@
 </section>
 
 <!-- ===================== PARCURS · beat: cum funcționează ===================== -->
-<section class="sect" aria-labelledby="flow-t">
+<section class="sect" id="cum-decurge" aria-labelledby="flow-t">
   <div class="wrap">
     <div class="sect__head" data-reveal>
       <h2 id="flow-t">Cum decurge, de la primul mesaj</h2>
@@ -223,7 +223,7 @@
 </section>
 
 <!-- ===================== SERVICII · beat: soluție ===================== -->
-<section class="sect" aria-labelledby="serv-t">
+<section class="sect" id="servicii" aria-labelledby="serv-t">
   <div class="wrap">
     <div class="sect__head" data-reveal>
       <h2 id="serv-t">Ce se tratează aici</h2>
@@ -291,7 +291,7 @@
 </section>
 
 <!-- ===================== LOCAȚII ===================== -->
-<section class="sect" aria-labelledby="loc-t">
+<section class="sect" id="locatii" aria-labelledby="loc-t">
   <div class="wrap">
     <div class="sect__head" data-reveal>
       <h2 id="loc-t">Cele două locații</h2>
@@ -319,7 +319,7 @@
 </section>
 
 <!-- ===================== FAQ · coloana vertebrala a paginii ===================== -->
-<section class="sect sect--pivot" aria-labelledby="faq-t">
+<section class="sect sect--pivot" id="intrebari" aria-labelledby="faq-t">
   <div class="wrap">
     <div class="sect__head" data-reveal>
       <h2 id="faq-t">Întrebări frecvente</h2>
@@ -405,7 +405,7 @@
 </section>
 
 <!-- ===================== CLOSE · beat: programare ===================== -->
-<section class="sect sect--pivot close" aria-labelledby="close-t">
+<section class="sect sect--pivot close" id="contact" aria-labelledby="close-t">
   <div class="wrap close__grid">
     <div data-reveal>
       <h2 id="close-t">Programarea se face într-un singur mesaj</h2>
@@ -447,13 +447,57 @@
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="foot">
-  <div class="wrap foot__in">
-    <p>Tekaro Studio, Cristian Dan. Kinetoterapie și recuperare medicală.</p>
-    <nav class="foot__links" aria-label="Legal">
-      <a href="termeni.html">Termeni</a>
-      <a href="confidentialitate.html">Confidențialitate</a>
-      <a href="tel:0736844319">0736 844 319</a>
-    </nav>
+  <div class="wrap">
+
+    <div class="foot__grid">
+      <div class="foot__col foot__col--brand">
+        <span class="wordmark">Tekaro<span>Studio</span></span>
+        <p class="foot__about">Studio kinetoterapie și masaj terapeutic.<br>Kinetoterapeut Cristian Dan.</p>
+        <a class="foot__phone" href="tel:0736844319">
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3.5 2h3l1.5 4-2 1.5a11 11 0 005.5 5.5L13 11l4 1.5v3A1.5 1.5 0 0115.5 17C7.5 17 1 10.5 1 2.5A1.5 1.5 0 013.5 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          0736 844 319
+        </a>
+        <a class="foot__mail" href="mailto:tekarostudio@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="1.5" y="3.5" width="15" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 4.5l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          tekarostudio@gmail.com
+        </a>
+      </div>
+
+      <nav class="foot__col" aria-labelledby="fnav">
+        <p class="foot__h" id="fnav">Navigare</p>
+        <ul class="foot__list">
+          <li><a href="#servicii">Ce se tratează</a></li>
+          <li><a href="#cum-decurge">Cum decurge</a></li>
+          <li><a href="#locatii">Locații</a></li>
+          <li><a href="#intrebari">Întrebări frecvente</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="foot__col">
+        <p class="foot__h">Program</p>
+        <div class="foot__prog">
+          <p><b>PT Center</b> · Popești-Leordeni<br><span>07:00 la 12:00</span></p>
+          <p><b>Crowne Plaza</b> · București<br><span>13:00 la 19:00</span></p>
+          <p class="foot__days">Luni până sâmbătă</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot__bar">
+      <p>© 2026 Tekaro Studio. Toate drepturile rezervate.</p>
+      <nav class="foot__legal" aria-label="Informații legale">
+        <a href="termeni.html">Termeni și condiții</a>
+        <a href="confidentialitate.html">Politica de confidențialitate</a>
+        <a href="https://anpc.ro/" target="_blank" rel="noopener">ANPC</a>
+      </nav>
+    </div>
+
+    <p class="foot__disclaimer">
+      Serviciile oferite de Tekaro Studio reprezintă kinetoterapie și masaj terapeutic
+      și nu înlocuiesc consultul medical de specialitate. Adresați-vă medicului pentru diagnostic.
+    </p>
+
   </div>
 </footer>
 

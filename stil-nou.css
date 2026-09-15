@@ -504,14 +504,77 @@ a { color: inherit; }
 /* ===================== FOOTER ===================== */
 .foot {
   border-top: 1px solid var(--border);
-  padding-block: var(--s12);
-  font-size: 14.5px;
+  background: var(--surface);
+  padding-block: var(--s16) var(--s12);
+  font-size: 15px;
+  color: var(--text-soft);
+}
+.foot a { color: var(--text-soft); text-decoration: none; }
+.foot a:hover { color: var(--primary); text-decoration: underline; }
+
+.foot__grid { display: grid; gap: var(--s12); }
+@media (min-width: 760px) {
+  .foot__grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--s8); }
+}
+
+.foot__col--brand .wordmark { font-size: 21px; display: inline-block; margin-bottom: var(--s3); }
+.foot__about { color: var(--text-mute); font-size: 14.5px; margin-bottom: var(--s4); }
+
+.foot__phone, .foot__mail {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-weight: 700;
+  white-space: nowrap;
+  margin-bottom: var(--s2);
+}
+.foot__phone { color: var(--primary); font-size: 16px; }
+.foot__mail { color: var(--text-soft); font-size: 14.5px; }
+.foot__phone svg, .foot__mail svg { flex: none; }
+.foot__col--brand a { display: flex; }
+
+.foot__h {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: var(--s4);
+}
+.foot__list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+.foot__list a { white-space: nowrap; }
+
+.foot__prog { display: grid; gap: var(--s3); font-size: 14.5px; }
+.foot__prog b { color: var(--text); font-weight: 800; }
+.foot__prog span { color: var(--text-mute); font-variant-numeric: tabular-nums; }
+.foot__days { color: var(--text-mute); font-weight: 700; }
+
+.foot__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3) var(--s8);
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--s12);
+  padding-top: var(--s6);
+  border-top: 1px solid var(--border);
+  font-size: 14px;
   color: var(--text-mute);
 }
-.foot__in { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s8); justify-content: space-between; align-items: center; }
-.foot a { color: var(--text-soft); text-decoration: none; white-space: nowrap; }
-.foot a:hover { color: var(--primary); text-decoration: underline; }
-.foot__links { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s6); }
+.foot__legal { display: flex; flex-wrap: wrap; gap: var(--s3) var(--s6); }
+.foot__legal a { white-space: nowrap; }
+
+/* Mentiunea medicala: obligatorie si importanta, deci nu ingropata in subsol */
+.foot__disclaimer {
+  margin-top: var(--s6);
+  padding: var(--s4) var(--s6);
+  background: var(--bg);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: 14px;
+  color: var(--text-soft);
+  max-width: 88ch;
+}
 
 /* ===================== BUTON FLOTANT WHATSAPP ===================== */
 .wa-fab {
