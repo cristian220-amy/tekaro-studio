@@ -105,29 +105,38 @@ a { color: inherit; }
   gap: var(--s4);
   min-height: 68px;
 }
+/* Wordmark-ul real Tekaro: "Tekaro" navy, "Studio" teal. Culorile sunt
+   preluate exact din brandul existent, nu reinterpretate. */
 .nav__brand {
   display: flex;
-  align-items: center;
-  gap: var(--s2);
+  align-items: baseline;
+  gap: var(--s3);
   text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: -0.01em;
+  min-width: 0;
 }
-.nav__brand svg { flex: none; }
-.nav__brand span { white-space: nowrap; }
-.nav__brand small {
-  display: block;
+.wordmark {
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 800;
+  font-size: 23px;
+  letter-spacing: -0.035em;
+  color: #0e2a4e;
+  white-space: nowrap;
+  line-height: 1;
+}
+.wordmark span { color: #0a8c7f; }
+
+.nav__brand small {
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--text-mute);
-  line-height: 1;
-  margin-top: 3px;
+  white-space: nowrap;
+  padding-left: var(--s3);
+  border-left: 1px solid var(--border);
 }
+@media (max-width: 600px) { .nav__brand small { display: none; } }
 
 .nav__call {
   display: inline-flex;
@@ -411,28 +420,6 @@ a { color: inherit; }
   max-width: 62ch;
 }
 
-/* ===================== METODE ===================== */
-.meth { display: grid; gap: var(--s6); }
-@media (min-width: 820px) { .meth { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.meth__item {
-  border-top: 2px solid var(--primary);
-  padding-top: var(--s6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--s3);
-}
-.meth__item:nth-child(2) { border-color: var(--accent); }
-.meth__item:nth-child(3) { border-color: var(--text-mute); }
-.meth__name { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
-.meth__meta {
-  font-size: 12.5px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-mute);
-}
-.meth__desc { color: var(--text-soft); font-size: 16px; }
-
 /* ===================== FAQ ===================== */
 .faq { display: grid; gap: 0; max-width: 840px; }
 .faq__item { border-top: 1px solid var(--border); }
@@ -525,6 +512,101 @@ a { color: inherit; }
 .foot a { color: var(--text-soft); text-decoration: none; white-space: nowrap; }
 .foot a:hover { color: var(--primary); text-decoration: underline; }
 .foot__links { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s6); }
+
+/* ===================== BUTON FLOTANT WHATSAPP ===================== */
+.wa-fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 60;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42), 0 2px 8px rgba(0,0,0,0.16);
+  transition: transform 200ms var(--ease);
+}
+/* miscarea la hover doar pe dispozitive cu mouse real, nu pe touch */
+@media (hover: hover) and (pointer: fine) {
+  .wa-fab:hover { transform: translateY(-2px); }
+}
+@media (prefers-reduced-motion: reduce) { .wa-fab:hover { transform: none; } }
+
+/* ===================== SERVICII (ce se trateaza) ===================== */
+.serv { display: grid; gap: var(--s6); }
+@media (min-width: 720px) { .serv { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.serv__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+.serv__item--lead { border-color: var(--primary); border-width: 2px; }
+
+.serv__tag {
+  align-self: flex-start;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--on-primary);
+  background: var(--primary);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.serv__name { font-family: var(--font-display); font-size: 23px; font-weight: 600; letter-spacing: -0.015em; }
+.serv__desc { color: var(--text-soft); font-size: 16px; }
+.serv__list { list-style: none; margin: var(--s2) 0 0; padding: 0; display: grid; gap: var(--s2); }
+.serv__list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  color: var(--text-soft);
+}
+.serv__list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 9px;
+  width: 11px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ===================== LOCATII ===================== */
+.loc { display: grid; gap: var(--s6); }
+@media (min-width: 720px) { .loc { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s8); } }
+.loc__item { border-top: 2px solid var(--primary); padding-top: var(--s6); }
+.loc__item:nth-child(2) { border-color: var(--accent); }
+.loc__when {
+  font-size: 12.5px; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text-mute); margin-bottom: var(--s2);
+}
+.loc__name { font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.015em; margin-bottom: var(--s2); }
+.loc__addr { color: var(--text-soft); font-size: 16px; margin-bottom: var(--s4); }
+.loc__hours {
+  display: block;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: var(--s4);
+}
+.loc__map {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 15px; font-weight: 700; color: var(--text);
+  text-decoration: none; white-space: nowrap;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 2px;
+  transition: border-color 180ms var(--ease), color 180ms var(--ease);
+}
+.loc__map:hover { color: var(--primary); border-color: var(--primary); }
 
 /* ===================== MISCARE ===================== */
 [data-reveal] { will-change: transform, opacity; }
