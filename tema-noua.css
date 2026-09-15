@@ -1,0 +1,79 @@
+/* =========================================================
+   Tema noua, strat de suprapunere peste style.css
+   ---------------------------------------------------------
+   Se incarca DUPA style.css si redefineste doar token-urile si
+   fonturile. Asa, paginile vechi (servicii, preturi, despre, blog,
+   legal) capata aceeasi identitate vizuala ca pagina principala
+   redesenata, fara sa le rescriem structura.
+
+   Ce NU face: nu schimba structura paginilor, doar culoarea si
+   tipografia. O restructurare reala a fiecarei pagini e treaba
+   separata, mai mare.
+
+   Accesibilitate, verificat cu check_contrast:
+   - teal-ul original #0a8c7f cu text alb da 4.14:1, SUB pragul AA de
+     4.5:1. De aceea butoanele folosesc #0a6f65 (6.04:1).
+   - #0a8c7f ramane pe wordmark, unde e text mare (23px/800), deci ii
+     ajunge pragul de 3:1.
+   ========================================================= */
+
+[data-theme="light"],
+:root {
+  /* fundaluri calde, nu alb rece */
+  --c-bg:          #fbf8f4;
+  --c-bg2:         #f4efe8;
+  --c-bg3:         #ebe3d9;
+
+  /* teal accesibil pentru butoane si linkuri */
+  --c-teal:        #0a6f65;
+  --c-teal2:       #075048;
+  --c-teal3:       rgba(10, 111, 101, 0.08);
+  --c-teal-border: rgba(10, 111, 101, 0.22);
+
+  /* accentul lut inlocuieste vechiul "gold" (care era de fapt bleumarin) */
+  --c-gold:        #b05a34;
+  --c-gold2:       #8d4526;
+  --c-gold3:       rgba(176, 90, 52, 0.10);
+  --c-gold-border: rgba(176, 90, 52, 0.28);
+
+  /* neutre virate spre teal, nu gri plat */
+  --c-white:       #1b2b29;
+  --c-gray:        #4a5f5c;
+  --c-gray2:       #7b8e8b;
+  --c-border:      rgba(27, 43, 41, 0.12);
+
+  --shadow: 0 18px 48px rgba(27, 43, 41, 0.10);
+}
+
+/* ===== Tipografie: aceeasi pereche ca pe pagina principala ===== */
+body,
+button, input, textarea, select,
+p, li, td, th, label, span, a, small, blockquote {
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero h1, .hero h2,
+[class*="__title"], [class*="__name"], [class*="__heading"] {
+  font-family: 'Epilogue', system-ui, sans-serif !important;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+}
+
+/* Wordmark-ul: aceleasi culori ca pe pagina noua */
+.logo,
+.loader__logo {
+  font-family: 'Nunito', system-ui, sans-serif !important;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #0e2a4e;
+}
+.logo span,
+.loader__logo span { color: #0a8c7f; }
+
+/* Titlurile de pe paginile vechi erau dimensionate pentru un alt font.
+   Le coboram putin, ca sa nu se stivuiasca, la fel ca pe pagina noua. */
+.hero h1 { font-size: clamp(29px, 3.6vw, 46px) !important; line-height: 1.1; }
+h2 { letter-spacing: -0.02em; }
+
+body { background: var(--c-bg); color: var(--c-white); }

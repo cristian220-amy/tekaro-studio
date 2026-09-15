@@ -34,13 +34,15 @@
       .filter(function (w) { return w.length > 2 && !STOPWORDS.has(w); });
   }
 
-  // Corpus: fiecare intrebare din #faq, cu textul intrebarii + raspunsului
+  // Corpus: fiecare intrebare din sectiunea de intrebari frecvente.
+  // Suporta ambele structuri: pagina veche (#faq .faq-item) si cea noua
+  // (.faq__item), ca acelasi fisier sa mearga pe amandoua fara duplicare.
   function buildCorpus() {
-    var items = document.querySelectorAll("#faq .faq-item");
+    var items = document.querySelectorAll("#faq .faq-item, .faq__item");
     var corpus = [];
     items.forEach(function (item) {
-      var qEl = item.querySelector(".faq-item__q");
-      var aEl = item.querySelector(".faq-item__a p");
+      var qEl = item.querySelector(".faq-item__q, .faq__q");
+      var aEl = item.querySelector(".faq-item__a p, .faq__a p");
       if (!qEl || !aEl) return;
       var question = qEl.textContent.trim();
       var answer = aEl.textContent.trim();
