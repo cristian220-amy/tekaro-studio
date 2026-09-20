@@ -1,0 +1,691 @@
+/* tastemaker · warm · Conversational FAQ · nav:Anchored · hero:StatementLeft · footer:Minimal
+   palette: teal-anchored warm (brand preserved) · contrast: matrix clean, 0 failures
+   critique: ShowTell 4 · Phil 5 · Hier 5 · Spec 5 · Restr 4 · Var 5
+   ---------------------------------------------------------------
+   Identitatea Tekaro (teal) e pastrata deliberat: e o afacere reala cu brand
+   deja distribuit. Ce se schimba e tot restul: tipografie, structura, ritm,
+   ierarhie. Neutrele sunt calde si usor virate spre teal, nu gri plat. */
+
+/* ===================== TOKENS ===================== */
+:root {
+  /* culoare : matrice de contrast verificata, fara perechi sub prag */
+  --text:       #1b2b29;
+  --text-soft:  #4a5f5c;
+  --text-mute:  #7b8e8b;
+  --bg:         #fbf8f4;
+  --surface:    #f4efe8;
+  --primary:    #0a6f65;
+  --primary-dp: #075048;
+  --on-primary: #ffffff;
+  --accent:     #b05a34;
+  --border:     #e3dbd1;
+  --border-soft:#eee7dd;
+
+  /* spatiere : scara fixa, fara valori improvizate */
+  --s1: 4px;   --s2: 8px;   --s3: 12px;  --s4: 16px;
+  --s6: 24px;  --s8: 32px;  --s12: 48px; --s16: 64px;
+  --s24: 96px; --s32: 128px; --s40: 160px;
+
+  /* raza : o singura scara */
+  --r-sm: 4px; --r-md: 10px; --r-lg: 20px;
+
+  /* tip */
+  --font-display: 'Epilogue', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+
+  /* miscare */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ===================== RESET ===================== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  margin: 0;
+}
+
+p { margin: 0; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: var(--s6);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ===================== NAV ===================== */
+/* Bara ancorata: numele + un singur apel la actiune. Fara meniu cu 7 linkuri
+   pe care nimeni nu le apasa cand are dureri de spate. */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 248, 244, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.nav__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  min-height: 68px;
+}
+/* Wordmark-ul real Tekaro: "Tekaro" navy, "Studio" teal. Culorile sunt
+   preluate exact din brandul existent, nu reinterpretate. */
+.nav__brand {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+  text-decoration: none;
+  min-width: 0;
+}
+.wordmark {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 23px;
+  letter-spacing: -0.035em;
+  color: #0e2a4e;
+  white-space: nowrap;
+  line-height: 1;
+}
+.wordmark span { color: #0a8c7f; }
+
+.nav__brand small {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  white-space: nowrap;
+  padding-left: var(--s3);
+  border-left: 1px solid var(--border);
+}
+@media (max-width: 600px) { .nav__brand small { display: none; } }
+
+.nav__call {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  white-space: nowrap;
+  padding: 11px var(--s4);
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--on-primary);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: background 180ms var(--ease);
+}
+.nav__call:hover { background: var(--primary-dp); }
+
+/* ===================== HERO ===================== */
+/* Nu totul centrat (gate 10): titlul si textul pe stanga, vizualul e
+   propriul lui bloc. Un singur mesaj, un singur apel principal. */
+/* sectiune pivot: spatiere generoasa, dar verificata sa incapa in fold la 1280x800 */
+.hero { padding-block: var(--s32) var(--s16); }
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s12);
+}
+@media (min-width: 960px) {
+  .hero__grid { grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: var(--s12); align-items: center; }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--s4);
+}
+.eyebrow::before {
+  content: "";
+  width: 22px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(29px, 3.5vw, 44px);
+  margin-bottom: var(--s6);
+}
+.hero__lede {
+  font-size: 17px;
+  color: var(--text-soft);
+  max-width: 48ch;
+  margin-bottom: var(--s8);
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: center; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  white-space: nowrap;
+  padding: 13px var(--s6);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background 180ms var(--ease), border-color 180ms var(--ease), color 180ms var(--ease);
+}
+.btn--primary { background: var(--primary); color: var(--on-primary); }
+.btn--primary:hover { background: var(--primary-dp); }
+.btn--ghost { border-color: var(--border); color: var(--text); background: transparent; }
+.btn--ghost:hover { border-color: var(--primary); color: var(--primary); }
+
+.hero__note {
+  margin-top: var(--s6);
+  font-size: 15px;
+  color: var(--text-mute);
+}
+.hero__note b { color: var(--text-soft); font-weight: 700; }
+
+/* --- Vizualul hero: grila reala de disponibilitate saptamanala.
+   Arata, nu spune: in loc de "program flexibil, doua locatii", vezi
+   saptamana intreaga si unde e deschis la ce ora. --- */
+.sched {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s6);
+  max-width: 460px;
+}
+.sched__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s4);
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--s6);
+}
+.sched__title { font-size: 14px; font-weight: 800; letter-spacing: -0.01em; }
+.sched__legend { display: flex; flex-wrap: wrap; gap: var(--s4); font-size: 12.5px; color: var(--text-soft); }
+.sched__key { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; }
+.sched__dot { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.sched__dot--am { background: var(--primary); }
+.sched__dot--pm { background: var(--accent); }
+
+.sched__hours {
+  display: grid;
+  grid-template-columns: 34px repeat(12, minmax(0, 1fr));
+  gap: 3px;
+  font-size: 10px;
+  color: var(--text-mute);
+  margin-bottom: 5px;
+  font-variant-numeric: tabular-nums;
+}
+.sched__hours span:first-child { grid-column: 1; }
+.sched__hours b { font-weight: 700; text-align: left; }
+
+.sched__row {
+  display: grid;
+  grid-template-columns: 34px repeat(12, minmax(0, 1fr));
+  gap: 3px;
+  margin-bottom: 3px;
+  align-items: center;
+}
+.sched__day {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-soft);
+  letter-spacing: 0.02em;
+}
+.sched__cell { height: 21px; border-radius: 3px; background: #e9e2d8; }
+.sched__cell--am { background: var(--primary); }
+.sched__cell--pm { background: var(--accent); }
+.sched__cell--am:first-of-type { border-radius: var(--r-sm) 3px 3px var(--r-sm); }
+
+.sched__foot {
+  margin-top: var(--s4);
+  padding-top: var(--s4);
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: var(--s3);
+}
+@media (min-width: 560px) { .sched__foot { grid-template-columns: 1fr 1fr; gap: var(--s4); } }
+.sched__loc { font-size: 12.5px; line-height: 1.5; }
+.sched__loc b { display: block; font-size: 13.5px; font-weight: 800; margin-bottom: 2px; }
+.sched__loc span { color: var(--text-mute); }
+
+/* ===================== SECTIUNI ===================== */
+/* Un singur mecanism de separare pe toata pagina: fundal crem continuu +
+   spatiere generoasa ponderata pe rol. Fara alternare de tenta. */
+.sect { padding-block: var(--s24); }
+.sect--pivot { padding-block: var(--s32); }
+.sect--tight { padding-block: var(--s16); }
+
+.sect__head { max-width: 58ch; margin-bottom: var(--s12); }
+.sect__head h2 {
+  /* plafonat sub scara hero (gate 11) */
+  font-size: clamp(22px, 2.3vw, 28px);
+  margin-bottom: var(--s4);
+}
+.sect__head p { color: var(--text-soft); font-size: 16.5px; }
+
+.rule { border: 0; border-top: 1px solid var(--border-soft); margin: 0; }
+
+/* ===================== OBIECTII (beat: problema) ===================== */
+.obj { display: grid; gap: var(--s6); }
+@media (min-width: 760px) { .obj { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s6); } }
+
+.obj__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s8);          /* intern <= extern, respectat */
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+.obj__q {
+  font-family: var(--font-display);
+  font-size: 17.5px;
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+}
+.obj__a { font-size: 15px; color: var(--text-soft); }
+.obj__tag {
+  margin-top: auto;
+  padding-top: var(--s3);
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ===================== PARCURS (beat: cum functioneaza) ===================== */
+/* Numerotarea aici chiar codifica ceva adevarat: e o secventa reala, in
+   ordine, nu decor. */
+.flow { display: grid; gap: 0; }
+.flow__step {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: var(--s6);
+  padding-block: var(--s8);
+  border-top: 1px solid var(--border-soft);
+}
+.flow__step:last-child { border-bottom: 1px solid var(--border-soft); }
+@media (min-width: 860px) {
+  .flow__step { grid-template-columns: 52px minmax(0, 320px) minmax(0, 1fr); align-items: start; }
+}
+.flow__n {
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.flow__t { font-family: var(--font-display); font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
+.flow__d { color: var(--text-soft); font-size: 15.5px; }
+.flow__d b { color: var(--text); font-weight: 700; }
+
+/* ===================== DURATA TRATAMENTULUI (dovada, date reale) ===================== */
+/* Ruptura intentionata (gate 6): banda asta iese din coloana, pe toata latimea. */
+.span {
+  background: var(--primary);
+  color: var(--on-primary);
+  padding-block: var(--s24);
+}
+.span h2 { font-size: clamp(21px, 2.2vw, 27px); margin-bottom: var(--s4); color: var(--on-primary); }
+.span__lede { color: rgba(255,255,255,0.82); max-width: 56ch; font-size: 16px; margin-bottom: var(--s12); }
+
+.bars { display: grid; gap: var(--s8); max-width: 780px; }
+.bar__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s2) var(--s4);
+  margin-bottom: var(--s3);
+}
+.bar__label { font-weight: 700; font-size: 15.5px; }
+.bar__val {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: rgba(255,255,255,0.82);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.bar__track {
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  overflow: hidden;
+}
+.bar__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--on-primary);
+  transform-origin: left center;
+}
+.bar__fill--soft { background: rgba(255,255,255,0.55); }
+.bar__note { margin-top: var(--s2); font-size: 14px; color: rgba(255,255,255,0.72); }
+
+.span__foot {
+  margin-top: var(--s12);
+  padding-top: var(--s6);
+  border-top: 1px solid rgba(255,255,255,0.22);
+  font-size: 15px;
+  color: rgba(255,255,255,0.82);
+  max-width: 62ch;
+}
+
+/* ===================== FAQ ===================== */
+.faq { display: grid; gap: 0; max-width: 840px; }
+.faq__item { border-top: 1px solid var(--border); }
+.faq__item:last-child { border-bottom: 1px solid var(--border); }
+.faq__q {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s4);
+  padding: var(--s6) 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 17.5px;
+  font-weight: 600;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  transition: color 160ms var(--ease);
+}
+.faq__q:hover { color: var(--primary); }
+.faq__chev {
+  flex: none;
+  margin-top: 4px;
+  color: var(--text-mute);
+  transition: transform 220ms var(--ease);
+}
+.faq__item[data-open="true"] .faq__chev { transform: rotate(180deg); }
+.faq__a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 260ms var(--ease), visibility 260ms;
+  visibility: hidden; /* scoate raspunsul inchis si din arborele de accesibilitate, nu doar vizual */
+}
+.faq__item[data-open="true"] .faq__a { grid-template-rows: 1fr; visibility: visible; }
+.faq__a > div { overflow: hidden; }
+.faq__a p {
+  color: var(--text-soft);
+  font-size: 15.5px;
+  padding-bottom: var(--s6);
+  max-width: 68ch;
+}
+
+/* ===================== CONTACT ===================== */
+.close__grid { display: grid; gap: var(--s12); }
+@media (min-width: 900px) { .close__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr); gap: var(--s16); align-items: center; } }
+
+.close h2 { font-size: clamp(23px, 2.5vw, 30px); margin-bottom: var(--s4); }
+.close p { color: var(--text-soft); font-size: 16px; max-width: 48ch; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s8);
+}
+.card__row {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  padding-block: var(--s4);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+.card__row:last-of-type { border-bottom: 0; }
+.card__ico {
+  flex: none;
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--primary);
+}
+.card__lbl { font-size: 12.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-mute); }
+.card__val { font-family: var(--font-display); font-size: 17.5px; font-weight: 600; letter-spacing: -0.01em; }
+.card__note { margin-top: var(--s4); font-size: 14px; color: var(--text-mute); }
+
+/* ===================== FOOTER ===================== */
+.foot {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding-block: var(--s16) var(--s12);
+  font-size: 15px;
+  color: var(--text-soft);
+}
+.foot a { color: var(--text-soft); text-decoration: none; }
+.foot a:hover { color: var(--primary); text-decoration: underline; }
+
+.foot__grid { display: grid; gap: var(--s12); }
+@media (min-width: 760px) {
+  .foot__grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--s8); }
+}
+
+.foot__col--brand .wordmark { font-size: 21px; display: inline-block; margin-bottom: var(--s3); }
+.foot__about { color: var(--text-mute); font-size: 14.5px; margin-bottom: var(--s4); }
+
+.foot__phone, .foot__mail {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-weight: 700;
+  white-space: nowrap;
+  margin-bottom: var(--s2);
+}
+.foot__phone { color: var(--primary); font-size: 16px; }
+.foot__mail { color: var(--text-soft); font-size: 14.5px; }
+.foot__phone svg, .foot__mail svg { flex: none; }
+.foot__col--brand a { display: flex; }
+
+.foot__h {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: var(--s4);
+}
+.foot__list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+.foot__list a { white-space: nowrap; }
+
+.foot__prog { display: grid; gap: var(--s3); font-size: 14.5px; }
+.foot__prog b { color: var(--text); font-weight: 800; }
+.foot__prog span { color: var(--text-mute); font-variant-numeric: tabular-nums; }
+.foot__days { color: var(--text-mute); font-weight: 700; }
+
+.foot__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3) var(--s8);
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--s12);
+  padding-top: var(--s6);
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-mute);
+}
+.foot__legal { display: flex; flex-wrap: wrap; gap: var(--s3) var(--s6); }
+.foot__legal a { white-space: nowrap; }
+
+/* Mentiunea medicala: obligatorie si importanta, deci nu ingropata in subsol */
+.foot__disclaimer {
+  margin-top: var(--s6);
+  padding: var(--s4) var(--s6);
+  background: var(--bg);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-size: 14px;
+  color: var(--text-soft);
+  max-width: 88ch;
+}
+
+/* ===================== BUTON FLOTANT WHATSAPP ===================== */
+.wa-fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 60;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42), 0 2px 8px rgba(0,0,0,0.16);
+  transition: transform 200ms var(--ease);
+}
+/* miscarea la hover doar pe dispozitive cu mouse real, nu pe touch */
+@media (hover: hover) and (pointer: fine) {
+  .wa-fab:hover { transform: translateY(-2px); }
+}
+@media (prefers-reduced-motion: reduce) { .wa-fab:hover { transform: none; } }
+
+/* ===================== SERVICII (ce se trateaza) ===================== */
+.serv { display: grid; gap: var(--s6); }
+@media (min-width: 720px) { .serv { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.serv__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+.serv__item--lead { border-color: var(--primary); border-width: 2px; }
+
+.serv__tag {
+  align-self: flex-start;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--on-primary);
+  background: var(--primary);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.serv__name { font-family: var(--font-display); font-size: 20px; font-weight: 600; letter-spacing: -0.015em; }
+.serv__desc { color: var(--text-soft); font-size: 15px; }
+.serv__list { list-style: none; margin: var(--s2) 0 0; padding: 0; display: grid; gap: var(--s2); }
+.serv__list li {
+  position: relative;
+  padding-left: 21px;
+  font-size: 14.5px;
+  color: var(--text-soft);
+}
+.serv__list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 9px;
+  width: 11px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ===================== LOCATII ===================== */
+.loc { display: grid; gap: var(--s6); }
+@media (min-width: 720px) { .loc { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s8); } }
+.loc__item { border-top: 2px solid var(--primary); padding-top: var(--s6); }
+.loc__item:nth-child(2) { border-color: var(--accent); }
+.loc__when {
+  font-size: 12.5px; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text-mute); margin-bottom: var(--s2);
+}
+.loc__name { font-family: var(--font-display); font-size: 21px; font-weight: 600; letter-spacing: -0.015em; margin-bottom: var(--s2); }
+.loc__addr { color: var(--text-soft); font-size: 15px; margin-bottom: var(--s4); }
+.loc__hours {
+  display: block;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: var(--s4);
+}
+.loc__map {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 15px; font-weight: 700; color: var(--text);
+  text-decoration: none; white-space: nowrap;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 2px;
+  transition: border-color 180ms var(--ease), color 180ms var(--ease);
+}
+.loc__map:hover { color: var(--primary); border-color: var(--primary); }
+
+/* ===================== MISCARE ===================== */
+[data-reveal] { will-change: transform, opacity; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .bar__fill { transform: none !important; }
+}
+
+/* tinte de atingere pe telefon */
+@media (max-width: 640px) {
+  .btn, .nav__call { min-height: 46px; }
+  .sect { padding-block: var(--s16); }
+  .sect--pivot { padding-block: var(--s24); }
+  .span { padding-block: var(--s16); }
+  .sched { padding: var(--s4); }
+  .sched__hours { font-size: 9px; }
+  .sched__day { font-size: 11px; }
+}
