@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="chat-faq.css" />
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="tema-noua.css" />
+  <link rel="stylesheet" href="ilustratii.css" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#0b396e" />
 
@@ -186,9 +187,8 @@
               FOTO CRISTIAN DAN — înlocuiește div-ul de mai jos cu:
               <img src="cristian-dan.jpg" alt="Cristian Dan — Kinetoterapeut" loading="lazy" decoding="async" onerror="this.style.display='none'">
             -->
-            <div class="hero__photo-placeholder">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" opacity="0.35"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-            </div>
+            <div class="hero__photo-placeholder" role="img"
+                 aria-label="Terapie TECAR: energie transferata in tesut"></div>
           </div>
           <div class="hero__photo-cert">
             <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M4.5 7l2 2 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -714,13 +714,20 @@
 
         <!-- PT Center -->
         <div class="loc-card">
-          <!-- Container imagine PT Center — înlocuiește cu <img src="pt-center.jpg" alt="PT Center Popești-Leordeni" loading="lazy" decoding="async" onerror="this.style.display='none'" /> -->
+          <!-- FOTOGRAFIE PT CENTER
+       Cardul spune si asa tot ce trebuie: adresa, programul si cele doua
+       butoane de harta. Rama goala doar il lungea.
+       Cand vine poza, se pune aici:
+       <div class="loc-card__photo"><img src="pt-center.jpg" alt="PT Center Popesti-Leordeni"
+            loading="lazy" decoding="async"></div>
+< !-- Container imagine PT Center — înlocuiește cu <img src="pt-center.jpg" alt="PT Center Popești-Leordeni" loading="lazy" decoding="async" onerror="this.style.display='none'" /> -- >
           <div class="loc-card__photo">
             <div class="img-placeholder">
               <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect x="2" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M13 8l2-4h6l2 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span>Fotografie PT Center</span>
             </div>
           </div>
+-->
           <div class="loc-card__tag">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 3.5V6.5l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
             Dimineață · 07:00 – 12:00
@@ -756,13 +763,20 @@
 
         <!-- Crowne Plaza -->
         <div class="loc-card loc-card--featured">
-          <!-- Container imagine Crowne Plaza — înlocuiește cu <img src="crowne-plaza.jpg" alt="Crowne Plaza Hotel București" loading="lazy" decoding="async" onerror="this.style.display='none'" /> -->
+          <!-- FOTOGRAFIE CROWNE PLAZA
+       Cardul spune si asa tot ce trebuie: adresa, programul si cele doua
+       butoane de harta. Rama goala doar il lungea.
+       Cand vine poza, se pune aici:
+       <div class="loc-card__photo"><img src="crowne-plaza.jpg" alt="Crowne Plaza Hotel Bucuresti"
+            loading="lazy" decoding="async"></div>
+< !-- Container imagine Crowne Plaza — înlocuiește cu <img src="crowne-plaza.jpg" alt="Crowne Plaza Hotel București" loading="lazy" decoding="async" onerror="this.style.display='none'" /> -- >
           <div class="loc-card__photo">
             <div class="img-placeholder">
               <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect x="2" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M13 8l2-4h6l2 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span>Fotografie Crowne Plaza</span>
             </div>
           </div>
+-->
           <div class="loc-card__tag">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 3.5V6.5l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
             După-amiază · 13:00 – 19:00
@@ -866,13 +880,22 @@
   <section class="despre" id="despre">
     <div class="container despre__inner">
       <div class="despre__visual">
-        <!-- Container imagine Cristian Dan — înlocuiește div-ul cu <img src="poza-cristian.jpg" alt="Cristian Dan kinetoterapeut" class="despre__photo-img" loading="lazy" decoding="async" onerror="this.style.display='none'" /> -->
+        <!-- FOTOGRAFIA LUI CRISTIAN DAN
+     Cat timp nu exista poza, rama goala nu ajuta pe nimeni: lasa o gaura
+     cat jumatate de sectiune si scria "Adauga fotografia profesionala"
+     - adica ii spunea vizitatorului ca site-ul nu e terminat.
+     Cand vine poza: se sterge comentariul asta si se pune, in locul
+     div-ului, exact randul de mai jos.
+     <img src="poza-cristian.jpg" alt="Cristian Dan kinetoterapeut"
+          class="despre__photo-img" loading="lazy" decoding="async">
+< !-- Container imagine Cristian Dan — înlocuiește div-ul cu <img src="poza-cristian.jpg" alt="Cristian Dan kinetoterapeut" class="despre__photo-img" loading="lazy" decoding="async" onerror="this.style.display='none'" /> -- >
         <div class="despre__photo reveal-right">
           <div class="img-placeholder">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M13 8l2-4h6l2 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span>Adaugă fotografia profesională<br/>a lui Cristian Dan</span>
           </div>
         </div>
+-->
         <div class="despre__card-main">
           <p class="despre__card-kicker">Kinetoterapeut</p>
           <h3>Cristian Dan</h3>
@@ -932,7 +955,15 @@
   </section>
 
 
-  <!-- GALERIE FOTO -->
+  <!-- GALERIA "CABINET & ECHIPAMENTE"
+     O galerie de fotografii fara nicio fotografie. Cinci casute goale cu
+     aparat de fotografiat desenat in ele si, dedesubt, "Fotografii in curs
+     de adaugare". Un vizitator care cauta un kinetoterapeut nu citeste
+     asta ca pe o promisiune, ci ca pe un semn ca nu s-a terminat treaba.
+     Mai bine lipseste sectiunea decat sa fie goala.
+     Cand sunt pozele (assets/foto1..5.jpg), se scoate comentariul si
+     galeria revine intreaga, cu tot cu lightbox - nu s-a sters nimic.
+< !-- GALERIE FOTO -- >
   <section class="galerie" id="galerie">
     <div class="container">
       <div class="section-head">
@@ -942,7 +973,7 @@
       </div>
       <div class="gal-grid">
 
-        <!-- Card 1 — featured (span 2×2) -->
+        < !-- Card 1 — featured (span 2×2) -- >
         <div class="gal-item reveal"
              data-src="assets/foto1.jpg"
              data-caption="Cabinet PT Center — Popești-Leordeni">
@@ -958,7 +989,7 @@
           <div class="gal-item__caption">Cabinet PT Center — Popești-Leordeni</div>
         </div>
 
-        <!-- Card 2 -->
+        < !-- Card 2 -- >
         <div class="gal-item reveal"
              data-src="assets/foto2.jpg"
              data-caption="Aparatul TECAR — terapie de ultimă generație">
@@ -974,7 +1005,7 @@
           <div class="gal-item__caption">Aparatul TECAR</div>
         </div>
 
-        <!-- Card 3 -->
+        < !-- Card 3 -- >
         <div class="gal-item reveal"
              data-src="assets/foto3.jpg"
              data-caption="Ședință de masaj terapeutic">
@@ -990,7 +1021,7 @@
           <div class="gal-item__caption">Ședință de masaj terapeutic</div>
         </div>
 
-        <!-- Card 4 -->
+        < !-- Card 4 -- >
         <div class="gal-item reveal"
              data-src="assets/foto4.jpg"
              data-caption="Crowne Plaza Hotel — locația din București">
@@ -1006,7 +1037,7 @@
           <div class="gal-item__caption">Crowne Plaza Hotel — București</div>
         </div>
 
-        <!-- Card 5 -->
+        < !-- Card 5 -- >
         <div class="gal-item reveal"
              data-src="assets/foto5.jpg"
              data-caption="Recuperare pediatrică — Copii & Juniori">
@@ -1029,6 +1060,7 @@
       </p>
     </div>
   </section>
+-->
 
   <!-- LIGHTBOX MODAL -->
   <div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Galerie foto">

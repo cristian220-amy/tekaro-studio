@@ -2347,7 +2347,11 @@ img:not([data-src]) { opacity: 1; }
 /* light mode overrides */
 [data-theme="light"] .blog-card { background: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
 [data-theme="light"] .blog-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.12); }
-[data-theme="light"] .blog-card__img-placeholder { background: linear-gradient(135deg, #eef3f9, #dde7f3); color: #aec1d6; }
+/* Rama goala a articolelor e desenata acum in ilustratii.css, cu un desen
+   pentru fiecare articol. Regula de aici folosea scurtatura "background",
+   care sterge si imaginea, nu doar culoarea - si avea doua greutati in
+   selector, deci castiga orice. A fost scoasa ca sa nu mai fie nevoie de
+   !important acolo. */
 
 @media (max-width: 900px) {
   .blog-preview__grid { grid-template-columns: 1fr 1fr; }

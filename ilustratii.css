@@ -1,0 +1,120 @@
+/* =========================================================
+   Ilustratii pentru articole
+   ---------------------------------------------------------
+   Inainte, fiecare articol avea acelasi dreptunghi gri cu o iconita de
+   poza in mijloc. Unsprezece articole, unsprezece rame goale - un site
+   care isi anunta singur ca nu e gata.
+
+   Acum fiecare articol are desenul lui. Aceeasi grila, aceeasi grosime
+   de linie, aceeasi pereche de culori peste tot: verdele e structura
+   sanatoasa, lutul e exact locul care doare. Asa, desenul spune despre
+   ce e articolul inainte sa citesti titlul.
+
+   Sunt SVG puse direct in CSS, deci nu se incarca nimic din retea si nu
+   depind de JavaScript. Cand apar fotografii reale de la cabinet, se
+   pune <img> in acelasi container si desenul ramane dedesubt, ca plasa
+   de siguranta.
+
+   O capcana, pentru cine umbla dupa mine: style.css avea o regula
+       [data-theme="light"] .blog-card__img-placeholder { background: ... }
+   Scurtatura "background" nu schimba doar culoarea - reseteaza si
+   imaginea, si -repeat, si -position, si -size. Iar selectorul ei avea
+   doua greutati, deci batea orice regula scrisa aici cu o singura clasa,
+   oricat de jos in fisier. Desenele ieseau repetate si taiate, fara
+   nicio eroare nicaieri. Regula aceea a fost scoasa din style.css; daca
+   se intoarce, se intampla din nou.
+   ========================================================= */
+
+.blog-card__img-placeholder,
+.article-img[data-ilustratie] {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #efe8df;
+  /* Fundalul din style.css e rece, albastrui. Peste tema calda a
+     site-ului arata ca o gaura, deci il aduc pe paleta casei. */
+  background-image: linear-gradient(135deg, #f3ece3, #e6ddd1);
+}
+
+/* Marimea o dau dupa inaltime, nu dupa latime: rama din capul
+   articolului e mai lata decat desenul (16:7 fata de 16:9), iar pe
+   latime desenul i-ar iesi in sus si in jos. */
+.blog-card__img-placeholder { background-size: auto 78%; }
+.article-img[data-ilustratie] { background-size: auto 72%; }
+
+/* Iconita veche de "poza lipsa" nu mai are ce cauta aici. */
+.blog-card__img-placeholder > svg,
+.article-img > svg:only-child { display: none; }
+
+/* Desenul respira cand treci peste card, ca restul cardului. */
+.blog-card__img-placeholder { transition: background-size .4s ease; }
+.blog-card:hover .blog-card__img-placeholder { background-size: auto 86%; }
+@media (prefers-reduced-motion: reduce) {
+  .blog-card__img-placeholder { transition: none; }
+  .blog-card:hover .blog-card__img-placeholder { background-size: auto 78%; }
+}
+
+/* Semnul casei: ce primeste un articol care inca n-are desenul lui.
+   Sta primul, ca desenele de mai jos sa il poata acoperi. */
+.blog-card__img-placeholder[data-ilustratie],
+.article-img[data-ilustratie] { background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M104 116 c22 -34 40 -50 56 -50 16 0 34 16 56 50%22 stroke=%22%230a6f65%22 stroke-width=%226%22/><circle cx=%22160%22 cy=%2266%22 r=%229%22 fill=%22%23b05a34%22 stroke=%22none%22/></g></svg>"); }
+
+.blog-card__img-placeholder[data-ilustratie="artroza-genunchiului"],
+.article-img[data-ilustratie="artroza-genunchiului"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M160 12 v48%22 stroke=%22%230a6f65%22 stroke-width=%2217%22 opacity=%221%22/><rect x=%22112%22 y=%2258%22 width=%2238%22 height=%2236%22 rx=%2216%22 stroke=%22%230a6f65%22 stroke-width=%228%22 opacity=%221%22/><rect x=%22170%22 y=%2258%22 width=%2238%22 height=%2236%22 rx=%2216%22 stroke=%22%230a6f65%22 stroke-width=%228%22 opacity=%221%22/><path d=%22M112 116 h96%22 stroke=%22%230a6f65%22 stroke-width=%2214%22 opacity=%221%22/><path d=%22M160 120 v48%22 stroke=%22%230a6f65%22 stroke-width=%2217%22 opacity=%221%22/><path d=%22M116 105 h88%22 stroke=%22%23b05a34%22 stroke-width=%225%22 stroke-dasharray=%2210 9%22/></g></svg>");
+}
+.blog-card__img-placeholder[data-ilustratie="dureri-de-spate"],
+.article-img[data-ilustratie="dureri-de-spate"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><rect x=%22137%22 y=%2222%22 width=%2246%22 height=%2213%22 rx=%226%22 stroke=%22%230a6f65%22 stroke-width=%223%22 opacity=%22.85%22/><rect x=%22137%22 y=%2241%22 width=%2246%22 height=%2213%22 rx=%226%22 stroke=%22%230a6f65%22 stroke-width=%223%22 opacity=%22.85%22/><rect x=%22137%22 y=%2260%22 width=%2246%22 height=%2213%22 rx=%226%22 stroke=%22%230a6f65%22 stroke-width=%223%22 opacity=%22.85%22/><rect x=%22137%22 y=%2279%22 width=%2246%22 height=%2213%22 rx=%226%22 stroke=%22%230a6f65%22 stroke-width=%223%22 opacity=%22.85%22/><rect x=%22137%22 y=%2298%22 width=%2246%22 height=%2213%22 rx=%226%22 stroke=%22%230a6f65%22 stroke-width=%223%22 opacity=%22.85%22/><rect x=%22137%22 y=%22117%22 width=%2246%22 height=%2213%22 rx=%226%22 stroke=%22%23b05a34%22 stroke-width=%223%22 opacity=%221%22/><rect x=%22137%22 y=%22136%22 width=%2246%22 height=%2213%22 rx=%226%22 stroke=%22%23b05a34%22 stroke-width=%223%22 opacity=%221%22/><rect x=%22137%22 y=%22155%22 width=%2246%22 height=%2213%22 rx=%226%22 stroke=%22%230a6f65%22 stroke-width=%223%22 opacity=%22.85%22/></g></svg>");
+}
+.blog-card__img-placeholder[data-ilustratie="entorsa-glezna"],
+.article-img[data-ilustratie="entorsa-glezna"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M124 14 v76%22 stroke=%22%230a6f65%22 stroke-width=%2216%22/><path d=%22M152 16 v82%22 stroke=%22%230a6f65%22 stroke-width=%229%22 opacity=%22.5%22/><path d=%22M96 142 h116 c20 0 30 -10 32 -21%22 stroke=%22%230a6f65%22 stroke-width=%2214%22/><path d=%22M96 142 c-10 -19 0 -36 20 -40%22 stroke=%22%230a6f65%22 stroke-width=%2214%22/><path d=%22M150 104 c14 8 18 16 16 26%22 stroke=%22%23b05a34%22 stroke-width=%224.5%22 stroke-dasharray=%227 6%22/><path d=%22M164 104 c14 8 18 16 16 26%22 stroke=%22%23b05a34%22 stroke-width=%224.5%22 stroke-dasharray=%227 6%22/><circle cx=%22172%22 cy=%22122%22 r=%2221%22 fill=%22%23b05a34%22 stroke=%22none%22 opacity=%22.15%22/></g></svg>");
+}
+.blog-card__img-placeholder[data-ilustratie="fasciita-plantara"],
+.article-img[data-ilustratie="fasciita-plantara"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M78 58 c0 34 6 48 6 62%22 stroke=%22%230a6f65%22 stroke-width=%2211%22/><path d=%22M72 138 h150 c16 0 24 -10 24 -20%22 stroke=%22%230a6f65%22 stroke-width=%2211%22/><path d=%22M88 122 c46 -12 106 -10 150 -4%22 stroke=%22%23b05a34%22 stroke-width=%224%22 stroke-dasharray=%2210 8%22/><circle cx=%2284%22 cy=%22128%22 r=%2219%22 fill=%22%23b05a34%22 stroke=%22none%22 opacity=%22.18%22/><circle cx=%2284%22 cy=%22128%22 r=%226%22 fill=%22%23b05a34%22 stroke=%22none%22/></g></svg>");
+}
+.blog-card__img-placeholder[data-ilustratie="genunchi-alergator"],
+.article-img[data-ilustratie="genunchi-alergator"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M160 12 v48%22 stroke=%22%230a6f65%22 stroke-width=%2217%22 opacity=%22.35%22/><rect x=%22112%22 y=%2258%22 width=%2238%22 height=%2236%22 rx=%2216%22 stroke=%22%230a6f65%22 stroke-width=%228%22 opacity=%22.35%22/><rect x=%22170%22 y=%2258%22 width=%2238%22 height=%2236%22 rx=%2216%22 stroke=%22%230a6f65%22 stroke-width=%228%22 opacity=%22.35%22/><path d=%22M112 116 h96%22 stroke=%22%230a6f65%22 stroke-width=%2214%22 opacity=%22.35%22/><path d=%22M160 120 v48%22 stroke=%22%230a6f65%22 stroke-width=%2217%22 opacity=%22.35%22/><path d=%22M232 10 c10 44 4 70 -14 88 -10 10 -14 30 -12 70%22 stroke=%22%23b05a34%22 stroke-width=%226%22/><circle cx=%22212%22 cy=%2282%22 r=%2220%22 fill=%22%23b05a34%22 stroke=%22none%22 opacity=%22.18%22/><circle cx=%22212%22 cy=%2282%22 r=%227%22 fill=%22%23b05a34%22 stroke=%22none%22/></g></svg>");
+}
+.blog-card__img-placeholder[data-ilustratie="hernie-disc"],
+.article-img[data-ilustratie="hernie-disc"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M96 48 h96%22 stroke=%22%230a6f65%22 stroke-width=%2220%22 opacity=%22.85%22/><path d=%22M96 132 h96%22 stroke=%22%230a6f65%22 stroke-width=%2220%22 opacity=%22.85%22/><path d=%22M96 90 h96%22 stroke=%22%239cc2bc%22 stroke-width=%2218%22 opacity=%22.45%22/><path d=%22M192 90 c22 0 26 -13 40 -13%22 stroke=%22%23b05a34%22 stroke-width=%229%22/><path d=%22M236 77 c22 0 28 22 48 22%22 stroke=%22%23b05a34%22 stroke-width=%223%22 opacity=%22.8%22/></g></svg>");
+}
+.blog-card__img-placeholder[data-ilustratie="recuperare-dupa-ghips"],
+.article-img[data-ilustratie="recuperare-dupa-ghips"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M78 66 h164%22 stroke=%22%230a6f65%22 stroke-width=%227%22 opacity=%22.9%22/><circle cx=%2278%22 cy=%2266%22 r=%2213%22 stroke=%22%230a6f65%22 stroke-width=%225%22/><circle cx=%22242%22 cy=%2266%22 r=%2213%22 stroke=%22%230a6f65%22 stroke-width=%225%22/><path d=%22M104 116 h112%22 stroke=%22%239cc2bc%22 stroke-width=%2216%22 stroke-dasharray=%2226 16%22 opacity=%22.5%22/><path d=%22M160 100 v-14%22 stroke=%22%23b05a34%22 stroke-width=%223%22/><path d=%22M150 92 l10 -10 10 10%22 stroke=%22%23b05a34%22 stroke-width=%223%22/></g></svg>");
+}
+.blog-card__img-placeholder[data-ilustratie="scolioza-copii"],
+.article-img[data-ilustratie="scolioza-copii"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M160 12 v156%22 stroke=%22%239cc2bc%22 stroke-width=%223%22 stroke-dasharray=%227 8%22/><path d=%22M160 16 c30 28 30 48 0 74 -30 26 -30 46 0 74%22 stroke=%22%230a6f65%22 stroke-width=%2213%22/><path d=%22M112 26 h96%22 stroke=%22%23b05a34%22 stroke-width=%225%22 opacity=%22.85%22 transform=%22rotate(-7 160 26)%22/><path d=%22M118 158 h84%22 stroke=%22%23b05a34%22 stroke-width=%225%22 opacity=%22.85%22 transform=%22rotate(6 160 158)%22/></g></svg>");
+}
+.blog-card__img-placeholder[data-ilustratie="tecar-ce-este"],
+.article-img[data-ilustratie="tecar-ce-este"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M48 74 h224%22 stroke=%22%239cc2bc%22 stroke-width=%222.5%22 opacity=%22.55%22/><path d=%22M48 90 h224%22 stroke=%22%239cc2bc%22 stroke-width=%222.5%22 opacity=%22.55%22/><path d=%22M48 106 h224%22 stroke=%22%239cc2bc%22 stroke-width=%222.5%22 opacity=%22.55%22/><path d=%22M160 68 a22 22 0 0 1 0 44%22 stroke=%22%230a6f65%22 stroke-width=%223%22 opacity=%22.9%22/><path d=%22M160 52 a38 38 0 0 1 0 76%22 stroke=%22%230a6f65%22 stroke-width=%223%22 opacity=%22.55%22/><path d=%22M160 36 a54 54 0 0 1 0 108%22 stroke=%22%230a6f65%22 stroke-width=%223%22 opacity=%22.3%22/><circle cx=%22160%22 cy=%2290%22 r=%227%22 fill=%22%23b05a34%22 stroke=%22none%22/></g></svg>");
+}
+.blog-card__img-placeholder[data-ilustratie="tendinite-tratament"],
+.article-img[data-ilustratie="tendinite-tratament"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M44 90 h44%22 stroke=%22%230a6f65%22 stroke-width=%2218%22 opacity=%22.85%22/><path d=%22M88 90 c40 -34 90 -34 140 -17%22 stroke=%22%239cc2bc%22 stroke-width=%223.5%22 opacity=%22.8%22/><path d=%22M88 90 c40 -12 90 -12 140 -6%22 stroke=%22%239cc2bc%22 stroke-width=%223.5%22 opacity=%22.8%22/><path d=%22M88 90 c40 12 90 12 140 6%22 stroke=%22%239cc2bc%22 stroke-width=%223.5%22 opacity=%22.8%22/><path d=%22M88 90 c40 34 90 34 140 17%22 stroke=%22%239cc2bc%22 stroke-width=%223.5%22 opacity=%22.8%22/><circle cx=%22106%22 cy=%2290%22 r=%2226%22 fill=%22%23b05a34%22 stroke=%22none%22 opacity=%22.16%22/><path d=%22M96 90 h22%22 stroke=%22%23b05a34%22 stroke-width=%225%22/></g></svg>");
+}
+.blog-card__img-placeholder[data-ilustratie="umar-inghetat"],
+.article-img[data-ilustratie="umar-inghetat"] {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%22128%22 cy=%2298%22 r=%2230%22 stroke=%22%230a6f65%22 stroke-width=%228%22/><path d=%22M98 98 a30 30 0 0 1 60 0%22 stroke=%22%230a6f65%22 stroke-width=%228%22 opacity=%22.35%22/><path d=%22M156 98 h72%22 stroke=%22%230a6f65%22 stroke-width=%2210%22 opacity=%22.85%22/><path d=%22M128 46 a52 52 0 0 1 46 28%22 stroke=%22%239cc2bc%22 stroke-width=%223.5%22 stroke-dasharray=%228 7%22 opacity=%22.8%22/><path d=%22M186 40 l26 26 M212 40 l-26 26%22 stroke=%22%23b05a34%22 stroke-width=%225%22/></g></svg>");
+}
+
+
+/* ---------------------------------------------------------
+   Cercul din capul paginii
+   In el statea o silueta gri de om - exact semnul pe care il
+   pune browserul cand lipseste o poza. Pana vine fotografia
+   lui Cristian, pun acolo desenul TECAR: spune ce se face in
+   cabinet si arata ca a fost desenat intentionat, nu ca s-a
+   rupt ceva. Cand vine poza, <img>-ul intra peste el.
+   --------------------------------------------------------- */
+.hero__photo-placeholder {
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 180%22><g fill=%22none%22 stroke-linecap=%22round%22><path d=%22M56 70 h208%22 stroke=%22%239cc2bc%22 stroke-width=%223%22 opacity=%22.5%22/><path d=%22M56 90 h208%22 stroke=%22%239cc2bc%22 stroke-width=%223%22 opacity=%22.5%22/><path d=%22M56 110 h208%22 stroke=%22%239cc2bc%22 stroke-width=%223%22 opacity=%22.5%22/><path d=%22M160 66 a24 24 0 0 1 0 48%22 stroke=%22%230a6f65%22 stroke-width=%224%22 opacity=%22.9%22/><path d=%22M160 48 a42 42 0 0 1 0 84%22 stroke=%22%230a6f65%22 stroke-width=%224%22 opacity=%22.55%22/><path d=%22M160 30 a60 60 0 0 1 0 120%22 stroke=%22%230a6f65%22 stroke-width=%224%22 opacity=%22.28%22/><circle cx=%22160%22 cy=%2290%22 r=%228%22 fill=%22%23b05a34%22 stroke=%22none%22/></g></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 92% auto;
+}
